@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "school-hero",
+      "description": "Modern school building exterior",
+      "imageUrl": "https://picsum.photos/seed/school-hero/1200/600",
+      "imageHint": "school building"
+    },
+    {
+      "id": "principal-portrait",
+      "description": "Professional portrait of a school principal",
+      "imageUrl": "https://picsum.photos/seed/principal/400/500",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "academic-video-1",
+      "description": "Students in a science lab",
+      "imageUrl": "https://picsum.photos/seed/video1/600/400",
+      "imageHint": "science lab"
+    },
+    {
+      "id": "academic-video-2",
+      "description": "Library study session",
+      "imageUrl": "https://picsum.photos/seed/video2/600/400",
+      "imageHint": "library students"
+    },
+    {
+      "id": "academic-video-3",
+      "description": "School sports event",
+      "imageUrl": "https://picsum.photos/seed/video3/600/400",
+      "imageHint": "school sports"
+    }
+  ]
+}
