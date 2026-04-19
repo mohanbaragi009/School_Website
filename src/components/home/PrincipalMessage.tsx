@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { Quote, Award, Clock } from 'lucide-react';
@@ -66,7 +67,6 @@ export function PrincipalMessage() {
             </p>
             
             <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-10">
-              {/* Refined Credential Block instead of broken image */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-2 text-accent">
                   <Award size={18} />

@@ -53,10 +53,10 @@ export function AcademicCalendar() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((event, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-all border-l-4 border-l-accent overflow-hidden group h-full">
+              <Card key={idx} className="hover:shadow-lg transition-all border-l-4 border-l-accent overflow-hidden group h-full rounded-[2rem]">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="bg-primary text-white p-2 rounded-lg text-center min-w-[65px] shadow-md group-hover:scale-110 transition-transform">
+                    <div className="bg-primary text-white p-2 rounded-xl text-center min-w-[65px] shadow-md group-hover:scale-110 transition-transform">
                       <div className="text-2xl font-bold leading-none">{event.date.getDate()}</div>
                       <div className="text-[10px] uppercase font-bold tracking-widest mt-1 opacity-80">
                         {event.date.toLocaleString('default', { month: 'short' })}
@@ -81,7 +81,7 @@ export function AcademicCalendar() {
                       <MapPin size={16} className="text-accent shrink-0" /> {event.location}
                     </div>
                   </div>
-                  <button className="w-full py-2.5 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-lg bg-primary/5 hover:bg-primary/10">
+                  <button className="w-full py-2.5 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-xl bg-primary/5 hover:bg-primary/10">
                     View Details <ChevronRight size={14} className="ml-1" />
                   </button>
                 </CardContent>
@@ -89,7 +89,7 @@ export function AcademicCalendar() {
             ))}
           </div>
 
-          <Card className="flex flex-col md:flex-row items-center justify-between p-8 bg-white shadow-sm border border-border rounded-2xl gap-6">
+          <Card className="flex flex-col md:flex-row items-center justify-between p-8 bg-white shadow-sm border border-border rounded-[2.5rem] gap-6">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-primary/5 rounded-full">
                 <FileText className="text-primary h-8 w-8" />

@@ -22,7 +22,10 @@ export default function Home() {
           <Hero />
         </div>
         
-        {/* About Section - Enhanced with Images */}
+        {/* Accent Separator */}
+        <div className="h-2 w-full bg-accent"></div>
+
+        {/* About Section */}
         <section id="about" className="py-24 bg-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform origin-top-right"></div>
           <div className="container mx-auto px-4 relative z-10">
@@ -62,19 +65,19 @@ export default function Home() {
                 <div className="aspect-square bg-accent/20 rounded-full absolute -top-20 -right-20 w-80 h-80 -z-10 blur-3xl opacity-50"></div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
-                    <div className="bg-white p-3 rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
-                      <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-xl w-full" />
+                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform hover:-translate-y-2 transition-transform duration-500 border border-slate-100">
+                      <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-[2rem] w-full" />
                     </div>
-                    <div className="bg-white p-3 rounded-2xl shadow-2xl transform translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-75">
-                      <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-xl w-full" />
+                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-75 border border-slate-100">
+                      <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-[2rem] w-full" />
                     </div>
                   </div>
                   <div className="space-y-4 pt-8">
-                    <div className="bg-white p-3 rounded-2xl shadow-2xl transform -translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-150">
-                      <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-xl w-full" />
+                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform -translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-150 border border-slate-100">
+                      <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-[2rem] w-full" />
                     </div>
-                    <div className="bg-white p-3 rounded-2xl shadow-2xl hover:-translate-y-2 transition-transform duration-500 delay-300">
-                      <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-xl w-full" />
+                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl hover:-translate-y-2 transition-transform duration-500 delay-300 border border-slate-100">
+                      <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-[2rem] w-full" />
                     </div>
                   </div>
                 </div>
@@ -83,15 +86,27 @@ export default function Home() {
           </div>
         </section>
 
-        <div id="leadership" className="bg-slate-50 border-y border-border/50">
+        {/* Highlight Separator */}
+        <div className="h-2 w-full bg-[hsl(var(--highlight))]"></div>
+
+        {/* Leadership Section */}
+        <div id="leadership" className="bg-slate-50 relative">
           <PrincipalMessage />
         </div>
+
+        {/* Primary Separator */}
+        <div className="h-2 w-full bg-primary"></div>
         
+        {/* Student Life Section */}
         <div id="student-life" className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-white pointer-events-none"></div>
           <VirtualGuide />
         </div>
 
+        {/* Accent Separator */}
+        <div className="h-2 w-full bg-accent"></div>
+
+        {/* Academics Section */}
         <div id="academics" className="bg-white">
           <div className="bg-slate-50/50">
             <AcademicCalendar />
@@ -101,6 +116,10 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Highlight Separator */}
+        <div className="h-2 w-full bg-[hsl(var(--highlight))]"></div>
+
+        {/* Staff Portal Section */}
         <div id="staff" className="relative overflow-hidden bg-primary py-24">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-[120px]"></div>
@@ -110,7 +129,13 @@ export default function Home() {
           </div>
         </div>
 
-        <LocationMap />
+        {/* Primary Separator */}
+        <div className="h-2 w-full bg-primary"></div>
+
+        {/* Contact Section */}
+        <div id="contact">
+          <LocationMap />
+        </div>
       </main>
       <Footer />
       <Toaster />
