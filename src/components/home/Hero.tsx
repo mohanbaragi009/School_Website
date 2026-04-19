@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -8,63 +9,57 @@ export function Hero() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'school-hero');
 
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden flex items-center justify-center">
-      <Image 
-        src={heroImg?.imageUrl || 'https://picsum.photos/seed/school/1200/600'} 
-        alt="School Hero"
-        fill
-        priority
-        className="object-cover brightness-[0.4]"
-      />
-      
-      {/* Dynamic Overlay Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-primary/95"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-8 py-12">
-        <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white text-[10px] font-black rounded-full animate-in fade-in slide-in-from-bottom-8 duration-1000 backdrop-blur-xl uppercase tracking-[0.3em] shadow-2xl mx-auto">
-          <span className="w-2 h-2 bg-[hsl(var(--highlight))] rounded-full animate-pulse shadow-[0_0_15px_rgba(255,191,0,1)]"></span>
+    <section className="relative w-full py-16 md:py-24 overflow-hidden flex items-center justify-center bg-slate-50">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-10">
+        <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/50 backdrop-blur-xl border border-white/60 text-primary text-[10px] font-black rounded-full uppercase tracking-[0.3em] shadow-sm mx-auto">
+          <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(139,92,246,0.6)]"></span>
           90+ Years of Academic Excellence
         </div>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-white leading-tight max-w-5xl mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] animate-in fade-in zoom-in-95 duration-1000 delay-200">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-primary leading-[1.1] max-w-5xl mx-auto tracking-tight">
           Shaping Futures, <br className="hidden md:block" /> 
-          <span className="text-[hsl(var(--highlight))] relative inline-block italic">
+          <span className="text-accent italic relative">
             Empowering
-            <svg className="absolute -bottom-2 left-0 w-full h-4 text-[hsl(var(--highlight))]/60" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
+            <svg className="absolute -bottom-2 left-0 w-full h-4 text-accent/20" viewBox="0 0 200 20" fill="none" preserveAspectRatio="none">
               <path d="M0 10C50 15 150 5 200 10" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
             </svg>
           </span> Minds
         </h1>
         
-        <p className="text-base sm:text-lg md:text-xl text-blue-50/90 max-w-3xl mx-auto font-bold drop-shadow-2xl px-6 leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed px-6">
           Join Seshadripuram Institute, where tradition meets innovation to create the next generation of global leaders in Bangalore.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6 w-full max-w-lg mx-auto sm:max-w-none animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-500">
-          <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white text-base px-12 py-8 rounded-[2.5rem] font-black shadow-[0_20px_40px_-10px_rgba(139,92,246,0.6)] uppercase tracking-[0.1em] transition-all hover:scale-105 active:scale-95">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4 w-full max-w-lg mx-auto sm:max-w-none">
+          <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-base px-12 py-8 rounded-full font-bold shadow-2xl transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
             Enroll Now <ArrowRight className="ml-3 h-6 w-6" />
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto text-white border-white/40 hover:bg-white hover:text-primary text-base px-12 py-8 rounded-[2.5rem] font-black backdrop-blur-xl transition-all hover:scale-105 active:scale-95 uppercase tracking-[0.1em] border-2">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto text-primary border-primary/20 bg-white/40 backdrop-blur-md hover:bg-white text-base px-12 py-8 rounded-full font-bold transition-all hover:scale-105 active:scale-95 uppercase tracking-widest border-2">
             Virtual Tour
           </Button>
         </div>
         
-        {/* Stats Section - Scaled Down */}
-        <div className="hidden sm:grid grid-cols-3 gap-6 md:gap-10 max-w-4xl mx-auto pt-16 animate-in fade-in slide-in-from-bottom-20 duration-1000 delay-700">
+        {/* Glass Stats Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto pt-16">
           {[
-            { icon: BookOpen, val: "50+", label: "Academic Streams" },
-            { icon: Users, val: "15K+", label: "Global Alumni" },
-            { icon: Trophy, val: "120+", label: "Gold Medals" }
+            { icon: BookOpen, val: "50+", label: "Academic Streams", color: "text-blue-600" },
+            { icon: Users, val: "15K+", label: "Global Alumni", color: "text-purple-600" },
+            { icon: Trophy, val: "120+", label: "Gold Medals", color: "text-orange-500" }
           ].map((stat, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur-3xl border border-white/10 p-6 md:p-8 rounded-[2rem] text-white hover:bg-white/10 transition-all duration-500 group shadow-xl hover:-translate-y-2">
-              <stat.icon className="mx-auto mb-4 text-[hsl(var(--highlight))] group-hover:scale-110 transition-transform duration-500" size={32} />
-              <div className="text-3xl md:text-4xl font-black tracking-tighter mb-1">{stat.val}</div>
-              <div className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-black opacity-70">{stat.label}</div>
+            <div key={i} className="bg-white/60 backdrop-blur-2xl border border-white/80 p-8 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 group text-center">
+              <div className={`p-4 rounded-2xl bg-white shadow-sm inline-block mb-4 group-hover:scale-110 transition-transform ${stat.color}`}>
+                <stat.icon size={28} />
+              </div>
+              <div className="text-4xl font-bold tracking-tighter mb-1 text-primary">{stat.val}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] font-black text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
     </section>
   );
 }
