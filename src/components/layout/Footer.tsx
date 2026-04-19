@@ -38,18 +38,21 @@ export function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
             {/* Column 1: School Info */}
             <div className="space-y-10">
-              <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 bg-white rounded-2xl overflow-hidden p-2 shadow-2xl rotate-2 group hover:rotate-0 transition-transform duration-500">
-                  <Image 
-                    src={logoUrl} 
-                    alt="Seshadripuram Logo" 
-                    fill 
-                    className="object-contain"
-                  />
+              <div className="flex items-center gap-5">
+                {/* Pill Shaped Logo Container */}
+                <div className="relative w-10 h-24 bg-white rounded-full flex items-center justify-center p-1.5 shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-500 overflow-hidden shrink-0">
+                  <div className="relative w-full aspect-square">
+                    <Image 
+                      src={logoUrl} 
+                      alt="Seshadripuram Logo" 
+                      fill 
+                      className="object-cover rounded-sm"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-headline font-bold leading-tight tracking-tight">SESHADRIPURAM</h2>
-                  <p className="text-[10px] text-accent font-black uppercase tracking-[0.4em]">Institute</p>
+                  <h2 className="text-2xl lg:text-3xl font-headline font-bold leading-tight tracking-tight">SESHADRIPURAM</h2>
+                  <p className="text-[10px] text-accent font-black uppercase tracking-[0.5em] mt-1">Institute</p>
                 </div>
               </div>
               <p className="text-sm text-blue-100/70 leading-relaxed font-medium">

@@ -56,18 +56,21 @@ export function Header() {
       
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4 xl:py-6 flex justify-between items-center">
-        <Link href="#home" className="flex items-center gap-4 group">
-          <div className="relative w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 overflow-hidden rounded-2xl border border-primary/5 bg-white p-1.5 shadow-lg group-hover:scale-105 transition-all">
-            <Image 
-              src={logoUrl} 
-              alt="SET Logo" 
-              fill 
-              className="object-contain"
-            />
+        <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
+          {/* Pill Shaped Logo Container */}
+          <div className="relative w-8 h-20 lg:w-10 lg:h-24 bg-white rounded-full flex items-center justify-center p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 group-hover:scale-105 transition-all duration-500 overflow-hidden">
+            <div className="relative w-full aspect-square">
+              <Image 
+                src={logoUrl} 
+                alt="SET Logo" 
+                fill 
+                className="object-cover rounded-sm"
+              />
+            </div>
           </div>
           <div className="flex flex-col">
-            <h1 className="text-xl lg:text-2xl xl:text-3xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
-            <p className="text-[9px] lg:text-[11px] xl:text-xs font-black text-accent tracking-[0.5em] uppercase mt-1">Institute</p>
+            <h1 className="text-2xl lg:text-3xl xl:text-4xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
+            <p className="text-[10px] lg:text-[11px] xl:text-xs font-black text-accent tracking-[0.5em] uppercase mt-1">Institute</p>
           </div>
         </Link>
 
@@ -102,12 +105,14 @@ export function Header() {
                 <SheetHeader className="p-8 border-b border-white/10">
                   <div className="flex items-center justify-between">
                     <SheetTitle className="text-left flex items-center gap-4">
-                      <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-white p-2">
-                        <Image src={logoUrl} alt="Logo" fill className="object-contain" />
+                      <div className="relative w-8 h-20 bg-white rounded-full flex items-center justify-center p-1 shadow-lg">
+                        <div className="relative w-full aspect-square">
+                          <Image src={logoUrl} alt="Logo" fill className="object-cover" />
+                        </div>
                       </div>
                       <div className="text-white">
-                        <p className="font-headline font-bold text-xl leading-none">Seshadripuram</p>
-                        <p className="text-[10px] font-bold text-accent tracking-widest uppercase mt-1">Institute</p>
+                        <p className="font-headline font-bold text-2xl leading-none">Seshadripuram</p>
+                        <p className="text-[10px] font-bold text-accent tracking-[0.4em] uppercase mt-1">Institute</p>
                       </div>
                     </SheetTitle>
                     <SheetClose className="p-2 hover:bg-white/10 rounded-full text-white">
