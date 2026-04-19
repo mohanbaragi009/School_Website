@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -44,35 +45,27 @@ export function AcademicCalendar() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
           {/* Calendar View */}
-          <Card className="lg:col-span-4 xl:col-span-4 shadow-xl border-none overflow-hidden">
+          <Card className="xl:col-span-4 shadow-xl border-none overflow-hidden mx-auto w-full max-w-md xl:max-w-none">
             <CardHeader className="bg-primary text-white p-6">
               <CardTitle className="flex items-center gap-2 text-xl">
                 <CalendarDays className="text-accent" />
                 Monthly View
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-0 flex justify-center bg-white">
+            <CardContent className="p-2 md:p-4 bg-white flex justify-center">
               <CalendarUI
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="p-4 md:p-6 w-full"
-                classNames={{
-                  months: "w-full",
-                  month: "w-full space-y-4",
-                  table: "w-full border-collapse space-y-1",
-                  head_cell: "text-muted-foreground rounded-md w-full font-normal text-[0.8rem] text-center",
-                  cell: "text-center text-sm p-0 relative focus-within:z-20 w-full aspect-square",
-                  day: "h-full w-full p-0 font-normal aria-selected:opacity-100 flex items-center justify-center rounded-md hover:bg-accent/10 transition-colors",
-                }}
+                className="rounded-md border-none"
               />
             </CardContent>
           </Card>
           
           {/* Events List */}
-          <div className="lg:col-span-8 xl:col-span-8 space-y-6">
+          <div className="xl:col-span-8 space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <h3 className="text-2xl font-bold text-primary flex items-center gap-3">
                 Upcoming Events
@@ -116,7 +109,7 @@ export function AcademicCalendar() {
                 </Card>
               ))}
               
-              <Card className="flex flex-col items-center justify-center p-8 bg-white/50 border-2 border-dashed border-border rounded-xl">
+              <Card className="flex flex-col items-center justify-center p-8 bg-white/50 border-2 border-dashed border-border rounded-xl md:col-span-2 lg:col-span-1">
                 <FileText className="text-muted-foreground/30 mb-4 h-12 w-12" />
                 <p className="text-muted-foreground text-center mb-4 text-sm font-medium">Download the full academic planner for 2024-25 session.</p>
                 <button className="w-full sm:w-auto px-6 py-2 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-md">
