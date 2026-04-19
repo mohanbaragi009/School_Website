@@ -26,7 +26,7 @@ export function PrincipalMessage() {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6 md:p-8 text-white">
                 <p className="font-bold text-xl md:text-2xl leading-none">Dr. Meera K. Rao</p>
-                <p className="text-xs md:text-sm text-accent font-semibold uppercase tracking-widest mt-2 italic">Principal, Seshadripuram Gateway</p>
+                <p className="text-xs md:text-sm text-accent font-semibold uppercase tracking-widest mt-2 italic">Principal, Seshadripuram Institute</p>
               </div>
             </div>
             
@@ -51,7 +51,7 @@ export function PrincipalMessage() {
             <div className="relative pt-4">
               <Quote className="absolute -top-4 -left-6 md:-left-12 text-accent/10 w-20 h-20 md:w-32 md:h-32 -z-10" />
               <p className="text-lg md:text-2xl text-muted-foreground italic leading-relaxed font-body font-medium">
-                "Our mission at Seshadripuram Gateway has always been to provide an environment where curiosity thrives and every student finds their unique path to success. We don't just teach subjects; we nurture character, instill values, and prepare our students for an ever-changing world."
+                "Our mission at Seshadripuram Institute has always been to provide an environment where curiosity thrives and every student finds their unique path to success. We don't just teach subjects; we nurture character, instill values, and prepare our students for an ever-changing world."
               </p>
             </div>
             

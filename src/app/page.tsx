@@ -31,7 +31,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                   <p>
-                    Established in 1930, Seshadripuram Gateway has been a cornerstone of quality education in Bangalore. Our legacy is built on the pillars of academic distinction, holistic growth, and character building.
+                    Established in 1930, Seshadripuram Institute has been a cornerstone of quality education in Bangalore. Our legacy is built on the pillars of academic distinction, holistic growth, and character building.
                   </p>
                   <p>
                     From state-of-the-art laboratories to our extensive library and modern athletic facilities, we provide every student with the tools they need to excel in the 21st century. Join a community that values curiosity and prepares you for life beyond the classroom.

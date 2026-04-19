@@ -23,7 +23,7 @@ export function Footer() {
                 data-ai-hint="school logo"
               />
             </div>
-            <h2 className="text-xl font-headline font-bold">Seshadripuram Gateway</h2>
+            <h2 className="text-xl font-headline font-bold">Seshadripuram Institute</h2>
           </div>
           <p className="text-sm text-blue-100 leading-relaxed">
             Empowering students with quality education since 1930. Committed to excellence, integrity, and fostering a spirit of innovation in every learner.
@@ -81,7 +81,7 @@ export function Footer() {
       </div>
       
       <div className="container mx-auto px-4 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
-        <p>© 2024 Seshadripuram Gateway Educational Institutions. All Rights Reserved.</p>
+        <p>© 2024 Seshadripuram Institute Educational Institutions. All Rights Reserved.</p>
         <div className="flex gap-6">
           <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-white">Terms of Use</Link>

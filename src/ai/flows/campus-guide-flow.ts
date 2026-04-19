@@ -1,7 +1,7 @@
 
 'use server';
 /**
- * @fileOverview An AI-powered virtual campus guide for Seshadripuram Gateway.
+ * @fileOverview An AI-powered virtual campus guide for Seshadripuram Institute.
  *
  * - getCampusInfo - Returns descriptions and facts about campus facilities.
  */
@@ -29,12 +29,12 @@ const prompt = ai.definePrompt({
   name: 'campusGuidePrompt',
   input: {schema: CampusGuideInputSchema},
   output: {schema: CampusGuideOutputSchema},
-  prompt: `You are the virtual guide for Seshadripuram Gateway Educational Institutions.
+  prompt: `You are the virtual guide for Seshadripuram Institute Educational Institutions.
   
 Location: {{{locationName}}}
 
 Provide an inspiring and accurate description of this part of our campus. 
-Seshadripuram Gateway is a prestigious institution in Bangalore with a 90-year legacy.
+Seshadripuram Institute is a prestigious institution in Bangalore with a 90-year legacy.
 
 Focus on:
 1. Academic excellence.

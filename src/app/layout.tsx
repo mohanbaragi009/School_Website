@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Seshadripuram Gateway - Excellence in Education',
-  description: 'Official portal for Seshadripuram Gateway school management and academic content.',
+  title: 'Seshadripuram Institute - Excellence in Education',
+  description: 'Official portal for Seshadripuram Institute school management and academic content.',
 };
 
 export default function RootLayout({

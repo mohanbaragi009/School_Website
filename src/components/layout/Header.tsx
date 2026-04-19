@@ -56,7 +56,7 @@ export function Header() {
           </div>
           <div>
             <h1 className="text-lg md:text-2xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
-            <p className="text-[10px] md:text-sm font-semibold text-accent tracking-[0.2em] md:tracking-widest uppercase">Gateway</p>
+            <p className="text-[10px] md:text-sm font-semibold text-accent tracking-[0.2em] md:tracking-widest uppercase">Institute</p>
           </div>
         </Link>
 
@@ -100,7 +100,7 @@ export function Header() {
                       data-ai-hint="school logo"
                     />
                   </div>
-                  <span className="font-headline font-bold text-primary">Seshadripuram Gateway</span>
+                  <span className="font-headline font-bold text-primary">Seshadripuram Institute</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-4">

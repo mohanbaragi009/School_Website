@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -30,7 +31,7 @@ export function Hero() {
             </span> Minds
           </h1>
           <p className="text-base md:text-xl text-blue-50 max-w-2xl mx-auto font-medium drop-shadow-md px-4">
-            Join Seshadripuram Gateway, where tradition meets innovation to create leaders of tomorrow in the heart of Bangalore.
+            Join Seshadripuram Institute, where tradition meets innovation to create leaders of tomorrow in the heart of Bangalore.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 w-full max-w-md mx-auto sm:max-w-none">
             <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-base md:text-lg px-8 py-6 rounded-full font-bold shadow-xl shadow-accent/20">
