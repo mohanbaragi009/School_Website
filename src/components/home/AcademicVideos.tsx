@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { Play, Eye, Calendar, ArrowUpRight } from 'lucide-react';
@@ -33,7 +34,7 @@ export function AcademicVideos() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Life at Gateway</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Media Library</h2>
             <p className="text-muted-foreground italic leading-relaxed text-base md:text-lg">
               Experience our vibrant campus life, academic achievements, and cultural celebrations through our digital media library.
             </p>
@@ -48,7 +49,7 @@ export function AcademicVideos() {
             const placeholder = PlaceHolderImages.find(img => img.id === video.id);
             return (
               <div key={idx} className="group cursor-pointer">
-                <div className="relative aspect-video rounded-2xl overflow-hidden mb-5 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+                <div className="relative aspect-video rounded-[2rem] overflow-hidden mb-5 shadow-2xl group-hover:shadow-primary/20 transition-all duration-300">
                   <Image 
                     src={placeholder?.imageUrl || 'https://picsum.photos/seed/school-video/600/400'} 
                     alt={video.title}
@@ -61,11 +62,11 @@ export function AcademicVideos() {
                       <Play fill="currentColor" size={24} className="ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-widest">
+                  <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-white text-[10px] px-3 py-1.5 rounded-xl font-bold uppercase tracking-widest shadow-lg">
                     {video.duration}
                   </div>
                 </div>
-                <div className="space-y-3 px-1">
+                <div className="space-y-3 px-2">
                   <h3 className="font-bold text-primary group-hover:text-accent transition-colors text-lg md:text-xl line-clamp-1 leading-tight">{video.title}</h3>
                   <div className="flex items-center gap-6 text-[10px] md:text-xs text-muted-foreground font-bold uppercase tracking-wider">
                     <span className="flex items-center gap-1.5"><Calendar size={14} className="text-accent" /> {video.date}</span>
