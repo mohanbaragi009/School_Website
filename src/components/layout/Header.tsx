@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronRight, Moon, Sun } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -18,22 +18,6 @@ import { getPlaceholderById } from '@/lib/placeholder-images';
 
 export function Header() {
   const logoUrl = getPlaceholderById('school-logo');
-  const [isDark, setIsDark] = React.useState(false);
-
-  React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    setIsDark(isDarkMode);
-  }, []);
-
-  const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    if (newDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -45,7 +29,7 @@ export function Header() {
   ];
 
   return (
-    <header className="w-full bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl sticky top-0 z-[60] shadow-sm transition-colors duration-500">
+    <header className="w-full bg-white/90 backdrop-blur-xl sticky top-0 z-[60] shadow-sm">
       {/* Top Yellow Bar */}
       <div className="h-1.5 bg-[hsl(var(--highlight))] w-full"></div>
       
@@ -61,7 +45,7 @@ export function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <h1 className="text-2xl lg:text-3xl font-bold text-primary dark:text-white tracking-tight leading-none">SESHADRIPURAM</h1>
+            <h1 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
             <p className="text-[10px] lg:text-[11px] font-black text-accent tracking-[0.5em] uppercase mt-1">Institute</p>
           </div>
         </Link>
@@ -72,7 +56,7 @@ export function Header() {
             <Link 
               key={link.name} 
               href={link.href} 
-              className="text-[11px] font-bold uppercase tracking-widest text-primary/70 dark:text-white/70 hover:text-accent dark:hover:text-accent transition-all relative group"
+              className="text-[11px] font-bold uppercase tracking-widest text-primary/70 hover:text-accent transition-all relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
@@ -80,15 +64,6 @@ export function Header() {
           ))}
           
           <div className="flex items-center gap-4 ml-4">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleTheme}
-              className="rounded-full hover:bg-primary/5 dark:hover:bg-white/5 transition-all"
-            >
-              {isDark ? <Sun className="text-highlight" /> : <Moon className="text-primary" />}
-            </Button>
-            
             <Button asChild className="bg-gradient-to-r from-[hsl(var(--accent))] to-indigo-600 hover:from-indigo-600 hover:to-[hsl(var(--accent))] text-white rounded-full px-10 py-6 text-[11px] font-bold uppercase tracking-[0.2em] shadow-xl shadow-accent/20 transition-all hover:scale-105 active:scale-95 border-none">
               <Link href="#staff">Staff Portal</Link>
             </Button>
@@ -97,17 +72,9 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div className="lg:hidden flex items-center gap-2">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={toggleTheme}
-            className="rounded-full h-12 w-12"
-          >
-            {isDark ? <Sun className="text-highlight" /> : <Moon className="text-primary" />}
-          </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary dark:text-white h-12 w-12">
+              <Button variant="ghost" size="icon" className="text-primary h-12 w-12">
                 <Menu size={32} />
               </Button>
             </SheetTrigger>
