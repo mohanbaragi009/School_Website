@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { NewsBanner } from '@/components/home/NewsBanner';
@@ -7,6 +8,7 @@ import { AcademicCalendar } from '@/components/home/AcademicCalendar';
 import { AcademicVideos } from '@/components/home/AcademicVideos';
 import { AiRefinementTool } from '@/components/admin/AiRefinementTool';
 import { VirtualGuide } from '@/components/home/VirtualGuide';
+import { LocationMap } from '@/components/home/LocationMap';
 import { Toaster } from '@/components/ui/toaster';
 import { getPlaceholderById } from '@/lib/placeholder-images';
 
@@ -107,10 +109,10 @@ export default function Home() {
             <AiRefinementTool />
           </div>
         </div>
+
+        <LocationMap />
       </main>
-      <div id="contact">
-        <Footer />
-      </div>
+      <Footer />
       <Toaster />
     </div>
   );
