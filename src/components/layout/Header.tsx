@@ -57,14 +57,14 @@ export function Header() {
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4 xl:py-6 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
-          {/* Pill Shaped Logo Container */}
-          <div className="relative w-8 h-20 lg:w-10 lg:h-24 bg-white rounded-full flex items-center justify-center p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 group-hover:scale-105 transition-all duration-500 overflow-hidden">
-            <div className="relative w-full aspect-square">
+          {/* Full Circle Logo Container */}
+          <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center p-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0">
+            <div className="relative w-full h-full">
               <Image 
                 src={logoUrl} 
                 alt="SET Logo" 
                 fill 
-                className="object-cover rounded-sm"
+                className="object-contain"
               />
             </div>
           </div>
@@ -105,9 +105,9 @@ export function Header() {
                 <SheetHeader className="p-8 border-b border-white/10">
                   <div className="flex items-center justify-between">
                     <SheetTitle className="text-left flex items-center gap-4">
-                      <div className="relative w-8 h-20 bg-white rounded-full flex items-center justify-center p-1 shadow-lg">
-                        <div className="relative w-full aspect-square">
-                          <Image src={logoUrl} alt="Logo" fill className="object-cover" />
+                      <div className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
+                        <div className="relative w-full h-full">
+                          <Image src={logoUrl} alt="Logo" fill className="object-contain" />
                         </div>
                       </div>
                       <div className="text-white">

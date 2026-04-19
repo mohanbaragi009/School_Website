@@ -39,14 +39,14 @@ export function Footer() {
             {/* Column 1: School Info */}
             <div className="space-y-10">
               <div className="flex items-center gap-5">
-                {/* Pill Shaped Logo Container */}
-                <div className="relative w-10 h-24 bg-white rounded-full flex items-center justify-center p-1.5 shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-500 overflow-hidden shrink-0">
-                  <div className="relative w-full aspect-square">
+                {/* Full Circle Logo Container */}
+                <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center p-2 shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-500 overflow-hidden shrink-0">
+                  <div className="relative w-full h-full">
                     <Image 
                       src={logoUrl} 
                       alt="Seshadripuram Logo" 
                       fill 
-                      className="object-cover rounded-sm"
+                      className="object-contain"
                     />
                   </div>
                 </div>
