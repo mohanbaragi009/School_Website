@@ -11,6 +11,7 @@ import { VirtualGuide } from '@/components/home/VirtualGuide';
 import { LocationMap } from '@/components/home/LocationMap';
 import { Testimonials } from '@/components/home/Testimonials';
 import { ParentResources } from '@/components/home/ParentResources';
+import { HighlightsCarousel } from '@/components/home/HighlightsCarousel';
 import { Toaster } from '@/components/ui/toaster';
 import { getPlaceholderById } from '@/lib/placeholder-images';
 
@@ -24,6 +25,12 @@ export default function Home() {
           <Hero />
         </div>
         
+        {/* Yellow Separator */}
+        <div className="h-2 w-full bg-[hsl(var(--highlight))]"></div>
+
+        {/* Highlights Carousel Section */}
+        <HighlightsCarousel />
+
         {/* Accent Separator */}
         <div className="h-2 w-full bg-accent"></div>
 
@@ -40,24 +47,24 @@ export default function Home() {
                   </h2>
                 </div>
                 <div className="space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  <p>
+                  <p className="font-medium">
                     Established in 1930, Seshadripuram Institute has been a cornerstone of quality education in Bangalore. Our legacy is built on the pillars of academic distinction, holistic growth, and character building.
                   </p>
-                  <p>
+                  <p className="font-medium">
                     From state-of-the-art laboratories to our extensive library and modern athletic facilities, we provide every student with the tools they need to excel in the 21st century.
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-12 pt-4">
                   <div className="text-center lg:text-left">
-                    <div className="text-4xl font-bold text-primary">#1</div>
+                    <div className="text-5xl font-black text-primary">#1</div>
                     <div className="text-[10px] uppercase tracking-widest font-bold opacity-60">Ranked Institution</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-4xl font-bold text-primary">100%</div>
+                    <div className="text-5xl font-black text-primary">100%</div>
                     <div className="text-[10px] uppercase tracking-widest font-bold opacity-60">Passing Results</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-4xl font-bold text-primary">90+</div>
+                    <div className="text-5xl font-black text-primary">90+</div>
                     <div className="text-[10px] uppercase tracking-widest font-bold opacity-60">Year Legacy</div>
                   </div>
                 </div>
@@ -65,20 +72,20 @@ export default function Home() {
               
               <div className="relative">
                 <div className="aspect-square bg-accent/20 rounded-full absolute -top-20 -right-20 w-80 h-80 -z-10 blur-3xl opacity-50"></div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4">
-                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform hover:-translate-y-2 transition-transform duration-500 border border-slate-100">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <div className="bg-white p-4 rounded-[3rem] shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-slate-100">
                       <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-[2.5rem] w-full" />
                     </div>
-                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-75 border border-slate-100">
+                    <div className="bg-white p-4 rounded-[3rem] shadow-2xl transform translate-x-4 hover:-translate-y-2 transition-all duration-500 delay-75 border border-slate-100">
                       <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-[2.5rem] w-full" />
                     </div>
                   </div>
-                  <div className="space-y-4 pt-8">
-                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform -translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-150 border border-slate-100">
+                  <div className="space-y-6 pt-12">
+                    <div className="bg-white p-4 rounded-[3rem] shadow-2xl transform -translate-x-4 hover:-translate-y-2 transition-all duration-500 delay-150 border border-slate-100">
                       <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-[2.5rem] w-full" />
                     </div>
-                    <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl hover:-translate-y-2 transition-transform duration-500 delay-300 border border-slate-100">
+                    <div className="bg-white p-4 rounded-[3rem] shadow-2xl hover:-translate-y-2 transition-all duration-500 delay-300 border border-slate-100">
                       <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-[2.5rem] w-full" />
                     </div>
                   </div>
