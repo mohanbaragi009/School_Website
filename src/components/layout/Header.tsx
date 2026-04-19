@@ -41,7 +41,8 @@ export function Header() {
               src={logoUrl} 
               alt="SET Logo" 
               fill 
-              className="object-cover p-1"
+              className="object-cover p-2"
+              priority
             />
           </div>
           <div className="flex flex-col">
@@ -84,7 +85,7 @@ export function Header() {
                   <div className="flex items-center justify-between">
                     <SheetTitle className="text-left flex items-center gap-4">
                       <div className="relative w-16 h-16 bg-white rounded-full shadow-lg overflow-hidden shrink-0">
-                        <Image src={logoUrl} alt="Logo" fill className="object-cover" />
+                        <Image src={logoUrl} alt="Logo" fill className="object-cover p-2" />
                       </div>
                       <div className="text-white">
                         <p className="font-bold text-2xl leading-none">Seshadripuram</p>
