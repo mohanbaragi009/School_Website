@@ -71,8 +71,12 @@ const resources = [
 
 export function ParentResources() {
   return (
-    <section id="resources" className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4">
+    <section id="resources" className="py-24 bg-slate-50 relative overflow-hidden">
+      {/* Background Blobs for Glass depth */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <Badge variant="outline" className="border-primary/20 text-primary px-6 py-1.5 rounded-full font-bold tracking-widest bg-white uppercase text-xs">
             Digital Hub
@@ -87,7 +91,7 @@ export function ParentResources() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource, i) => (
-            <Card key={i} className="rounded-[3rem] border-white bg-white shadow-xl hover:shadow-2xl transition-all duration-500 group border-2 hover:-translate-y-2">
+            <Card key={i} className="rounded-[3rem] border-white/60 bg-white/40 backdrop-blur-xl shadow-2xl hover:shadow-primary/10 transition-all duration-500 group border-2 hover:-translate-y-2">
               <CardContent className="p-10 flex flex-col items-center text-center space-y-6">
                 <div className={`${resource.iconBg} w-20 h-20 rounded-3xl flex items-center justify-center ${resource.iconColor} shadow-lg group-hover:scale-110 transition-transform`}>
                   <resource.icon size={32} />

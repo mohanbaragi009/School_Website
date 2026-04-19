@@ -62,16 +62,16 @@ export function VirtualGuide() {
                 <Card 
                   key={loc.name}
                   className={cn(
-                    "cursor-pointer transition-all duration-500 group hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border-none transform hover:-translate-y-2 rounded-[2.5rem] shadow-xl",
+                    "cursor-pointer transition-all duration-500 group hover:shadow-2xl border-white/60 transform hover:-translate-y-2 rounded-[2.5rem] shadow-xl border-2",
                     isSelected 
-                      ? 'bg-accent text-white' 
-                      : 'bg-white'
+                      ? 'bg-accent text-white shadow-accent/20' 
+                      : 'bg-white/40 backdrop-blur-xl'
                   )}
                   onClick={() => handleExplore(loc.name)}
                 >
                   <CardContent className="p-8">
                     <div className={cn(
-                      "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500",
+                      "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 shadow-lg",
                       isSelected ? "bg-white/20 backdrop-blur-md text-white" : "bg-primary/5 text-primary group-hover:bg-accent/10 group-hover:text-accent"
                     )}>
                       <Icon className="w-8 h-8" />
@@ -96,7 +96,7 @@ export function VirtualGuide() {
 
           <div className="lg:col-span-7 min-h-[600px] h-full">
             {!selected && (
-              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/50 backdrop-blur-sm rounded-[2.5rem] border-4 border-dashed border-primary/10 transition-all duration-500 shadow-inner">
+              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/40 backdrop-blur-xl rounded-[2.5rem] border-4 border-dashed border-primary/10 transition-all duration-500 shadow-inner">
                 <div className="bg-primary/5 p-8 rounded-full mb-8 shadow-inner">
                   <Map className="w-20 h-20 text-primary/20" />
                 </div>
@@ -106,7 +106,7 @@ export function VirtualGuide() {
             )}
 
             {loading && (
-              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/80 backdrop-blur-sm rounded-[2.5rem] border-none shadow-2xl animate-pulse">
+              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/60 backdrop-blur-2xl rounded-[2.5rem] border-none shadow-2xl animate-pulse">
                 <Loader2 className="w-24 h-24 text-accent mb-10 animate-spin" />
                 <h5 className="text-3xl font-bold text-accent animate-pulse">Consulting AI Guide...</h5>
                 <p className="text-accent/60 mt-6 font-black uppercase tracking-[0.3em] text-xs">Fetching dynamic campus insights</p>
@@ -115,8 +115,8 @@ export function VirtualGuide() {
 
             {info && !loading && (
               <div className="animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 h-full">
-                <Card className="shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-none overflow-hidden rounded-[2.5rem] bg-white h-full">
-                  <div className="bg-primary p-10 md:p-14 text-white flex justify-between items-center relative overflow-hidden">
+                <Card className="shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-white/80 overflow-hidden rounded-[2.5rem] bg-white/40 backdrop-blur-xl h-full border-2">
+                  <div className="bg-primary/90 p-10 md:p-14 text-white flex justify-between items-center relative overflow-hidden backdrop-blur-md">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full -mr-32 -mt-32 blur-[80px]"></div>
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-5">
@@ -137,7 +137,7 @@ export function VirtualGuide() {
                   <CardContent className="p-10 md:p-16 space-y-12">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4 text-primary">
-                        <div className="w-10 h-10 rounded-2xl bg-primary/5 flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-sm">
                           <Info size={22} className="text-primary" />
                         </div>
                         <h5 className="font-bold text-2xl tracking-tight">Academic Overview</h5>
@@ -149,14 +149,14 @@ export function VirtualGuide() {
                     
                     <div className="space-y-8">
                       <div className="flex items-center gap-4 text-primary">
-                        <div className="w-10 h-10 rounded-2xl bg-accent/5 flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 rounded-2xl bg-accent/10 backdrop-blur-sm flex items-center justify-center shadow-sm">
                           <Sparkles size={22} className="text-accent" />
                         </div>
                         <h5 className="font-bold text-2xl tracking-tight">Campus Highlights</h5>
                       </div>
                       <ul className="grid grid-cols-1 gap-6 pl-14">
                         {info.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-5 p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-accent/30 transition-all group hover:bg-white hover:shadow-xl">
+                          <li key={i} className="flex items-start gap-5 p-6 rounded-[2rem] bg-white/20 border border-white/40 hover:border-accent/30 transition-all group hover:bg-white/40 hover:shadow-xl">
                             <div className="mt-2 w-3 h-3 rounded-full bg-accent shrink-0 shadow-[0_0_15px_rgba(var(--accent),0.6)]" />
                             <span className="text-primary/70 font-bold text-base md:text-lg leading-relaxed group-hover:text-primary transition-colors">{h}</span>
                           </li>
@@ -164,7 +164,7 @@ export function VirtualGuide() {
                       </ul>
                     </div>
 
-                    <div className="bg-accent/5 p-10 rounded-[2.5rem] border-2 border-dashed border-accent/30 relative overflow-hidden group hover:bg-accent/10 transition-colors">
+                    <div className="bg-accent/10 p-10 rounded-[2.5rem] border-2 border-dashed border-accent/30 relative overflow-hidden group hover:bg-accent/20 transition-colors backdrop-blur-sm">
                       <div className="absolute -top-4 -right-4 p-8 opacity-10 group-hover:rotate-12 group-hover:scale-110 transition-transform">
                         <Lightbulb size={100} className="text-accent" />
                       </div>

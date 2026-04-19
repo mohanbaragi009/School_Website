@@ -30,8 +30,10 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[100px] -z-10"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <Badge variant="outline" className="border-accent/40 text-accent px-6 py-1.5 rounded-full font-bold tracking-widest bg-accent/5 uppercase text-xs">
             Success Stories
@@ -46,8 +48,8 @@ export function Testimonials() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {reviews.map((rev, i) => (
-            <Card key={i} className="rounded-[2.5rem] border-none shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] bg-white relative">
-              <Quote className="absolute top-8 right-8 text-slate-100 w-24 h-24 -z-0" />
+            <Card key={i} className="rounded-[2.5rem] border-white/60 shadow-2xl bg-white/40 backdrop-blur-xl relative group hover:-translate-y-2 transition-all duration-500 border-2">
+              <Quote className="absolute top-8 right-8 text-primary/5 w-24 h-24 -z-0 group-hover:scale-110 transition-transform duration-700" />
               <CardContent className="p-10 relative z-10 space-y-6">
                 <div className="flex gap-1">
                   {[...Array(rev.rating)].map((_, i) => (
@@ -57,7 +59,7 @@ export function Testimonials() {
                 <p className="text-primary/80 text-xl font-medium italic leading-relaxed">
                   "{rev.content}"
                 </p>
-                <div className="flex items-center gap-4 pt-6 border-t border-slate-50">
+                <div className="flex items-center gap-4 pt-6 border-t border-white/40">
                   <Avatar className="w-14 h-14 border-2 border-white shadow-md">
                     <AvatarImage src={`https://picsum.photos/seed/${rev.name}/100/100`} />
                     <AvatarFallback>{rev.name[0]}</AvatarFallback>

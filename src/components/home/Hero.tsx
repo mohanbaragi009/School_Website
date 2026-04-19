@@ -18,7 +18,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-12">
-        {/* Premium Badge from Image - Sparkle replaced by Dot */}
+        {/* Premium Badge with Dot Indicator */}
         <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-2xl border border-white/60 rounded-2xl shadow-xl mx-auto transform hover:scale-105 transition-all duration-500 group">
           <div className="w-3 h-3 rounded-full bg-accent shadow-[0_0_12px_rgba(137,77,224,0.6)] animate-pulse" />
           <span className="text-2xl font-black text-primary tracking-tight">90+</span>
