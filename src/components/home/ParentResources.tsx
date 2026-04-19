@@ -11,7 +11,9 @@ const resources = [
     title: "Online Fee Payment",
     description: "Securely pay tuition and admission fees online.",
     icon: CreditCard,
-    color: "bg-blue-600",
+    textColor: "text-blue-600",
+    iconColor: "text-white",
+    iconBg: "bg-blue-600",
     bg: "bg-blue-50",
     link: "#"
   },
@@ -19,7 +21,9 @@ const resources = [
     title: "Attendance Portal",
     description: "Track student attendance and daily records.",
     icon: UserCheck,
-    color: "bg-purple-600",
+    textColor: "text-purple-600",
+    iconColor: "text-white",
+    iconBg: "bg-purple-600",
     bg: "bg-purple-50",
     link: "#"
   },
@@ -27,7 +31,9 @@ const resources = [
     title: "Result Inquiry",
     description: "View board results and assessment reports.",
     icon: GraduationCap,
-    color: "bg-green-600",
+    textColor: "text-green-600",
+    iconColor: "text-white",
+    iconBg: "bg-green-600",
     bg: "bg-green-50",
     link: "#"
   },
@@ -35,7 +41,9 @@ const resources = [
     title: "Transport Tracking",
     description: "Live updates for school bus routes and timings.",
     icon: Bus,
-    color: "bg-orange-500",
+    textColor: "text-orange-500",
+    iconColor: "text-white",
+    iconBg: "bg-orange-500",
     bg: "bg-orange-50",
     link: "#"
   },
@@ -43,7 +51,9 @@ const resources = [
     title: "Digital Library",
     description: "Access 20,000+ e-books and journals.",
     icon: Library,
-    color: "bg-pink-600",
+    textColor: "text-pink-600",
+    iconColor: "text-white",
+    iconBg: "bg-pink-600",
     bg: "bg-pink-50",
     link: "#"
   },
@@ -51,7 +61,9 @@ const resources = [
     title: "Downloads",
     description: "Forms, syllabus, and academic brochures.",
     icon: Download,
-    color: "bg-indigo-600",
+    textColor: "text-indigo-600",
+    iconColor: "text-white",
+    iconBg: "bg-indigo-600",
     bg: "bg-indigo-50",
     link: "#"
   }
@@ -75,9 +87,9 @@ export function ParentResources() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource, i) => (
-            <Card key={i} className="rounded-[3rem] border-white bg-white/60 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 group border-2 hover:-translate-y-2">
+            <Card key={i} className="rounded-[3rem] border-white bg-white shadow-xl hover:shadow-2xl transition-all duration-500 group border-2 hover:-translate-y-2">
               <CardContent className="p-10 flex flex-col items-center text-center space-y-6">
-                <div className={`${resource.bg} w-20 h-20 rounded-3xl flex items-center justify-center ${resource.color} shadow-sm group-hover:scale-110 transition-transform`}>
+                <div className={`${resource.iconBg} w-20 h-20 rounded-3xl flex items-center justify-center ${resource.iconColor} shadow-lg group-hover:scale-110 transition-transform`}>
                   <resource.icon size={32} />
                 </div>
                 <div className="space-y-2">
@@ -86,7 +98,7 @@ export function ParentResources() {
                     {resource.description}
                   </p>
                 </div>
-                <button className={`flex items-center gap-2 ${resource.color} font-black uppercase tracking-widest text-[10px] pt-4 group-hover:gap-4 transition-all`}>
+                <button className={`flex items-center gap-2 ${resource.textColor} font-black uppercase tracking-widest text-[10px] pt-4 group-hover:gap-4 transition-all bg-transparent border-none p-0`}>
                   Access Portal <ExternalLink size={14} />
                 </button>
               </CardContent>
