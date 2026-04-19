@@ -59,10 +59,10 @@ export function AcademicCalendar() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((event, idx) => (
-              <Card key={idx} className={`hover:shadow-2xl transition-all border-l-8 ${event.color} overflow-hidden group h-full rounded-[2rem] bg-white`}>
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="bg-primary text-white p-2 rounded-xl text-center min-w-[65px] shadow-md group-hover:scale-110 transition-transform">
+              <Card key={idx} className={`hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] transition-all border-l-8 ${event.color} overflow-hidden group h-full rounded-[2.5rem] bg-white shadow-xl`}>
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="bg-primary text-white p-3 rounded-2xl text-center min-w-[70px] shadow-lg group-hover:scale-110 transition-transform">
                       <div className="text-2xl font-bold leading-none">{event.date.getDate()}</div>
                       <div className="text-[10px] uppercase font-bold tracking-widest mt-1 opacity-80">
                         {event.date.toLocaleString('default', { month: 'short' })}
@@ -72,18 +72,18 @@ export function AcademicCalendar() {
                       {event.category}
                     </Badge>
                   </div>
-                  <h4 className="text-lg font-bold text-primary mb-3 group-hover:text-accent transition-colors leading-snug flex-grow">
+                  <h4 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors leading-snug flex-grow">
                     {event.title}
                   </h4>
-                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <div className="flex items-center gap-2">
+                  <div className="space-y-3 text-sm text-muted-foreground mb-8">
+                    <div className="flex items-center gap-3">
                       <Clock size={16} className="text-accent shrink-0" /> {event.time}
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <MapPin size={16} className="text-accent shrink-0" /> {event.location}
                     </div>
                   </div>
-                  <button className="w-full py-2.5 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-xl bg-primary/5 hover:bg-primary/10">
+                  <button className="w-full py-3 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-2xl bg-primary/5 hover:bg-primary/10 shadow-sm">
                     View Details <ChevronRight size={14} className="ml-1" />
                   </button>
                 </CardContent>
@@ -91,17 +91,17 @@ export function AcademicCalendar() {
             ))}
           </div>
 
-          <Card className="flex flex-col md:flex-row items-center justify-between p-8 bg-white shadow-xl border border-border rounded-[2.5rem] gap-6">
-            <div className="flex items-center gap-4">
-              <div className="p-4 bg-primary/5 rounded-[1.5rem] shadow-inner">
-                <FileText className="text-primary h-8 w-8" />
+          <Card className="flex flex-col md:flex-row items-center justify-between p-10 bg-white shadow-2xl border border-border rounded-[2.5rem] gap-8 transform hover:scale-[1.01] transition-transform">
+            <div className="flex items-center gap-6">
+              <div className="p-5 bg-primary/5 rounded-[2rem] shadow-inner">
+                <FileText className="text-primary h-10 w-10" />
               </div>
               <div>
-                <h4 className="font-bold text-primary text-xl">Academic Planner 2024-25</h4>
-                <p className="text-muted-foreground text-sm font-medium">Download the complete session schedule in PDF format.</p>
+                <h4 className="font-bold text-primary text-2xl">Academic Planner 2024-25</h4>
+                <p className="text-muted-foreground text-base font-medium">Download the complete session schedule in PDF format.</p>
               </div>
             </div>
-            <button className="w-full md:w-auto px-10 py-4 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 whitespace-nowrap uppercase tracking-widest">
+            <button className="w-full md:w-auto px-12 py-5 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 whitespace-nowrap uppercase tracking-widest active:scale-95">
               Download Full PDF
             </button>
           </Card>

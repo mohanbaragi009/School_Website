@@ -2,7 +2,7 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Map, Sparkles, Loader2, Landmark, Beaker, BookOpen, Trophy, Info, Lightbulb } from 'lucide-react';
 import { getCampusInfo, type CampusGuideOutput } from '@/ai/flows/campus-guide-flow';
@@ -37,7 +37,6 @@ export function VirtualGuide() {
 
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[100px] -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10"></div>
 
@@ -55,8 +54,7 @@ export function VirtualGuide() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Sidebar Location Grid */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {locations.map((loc) => {
               const Icon = loc.icon;
               const isSelected = selected === loc.name;
@@ -64,27 +62,30 @@ export function VirtualGuide() {
                 <Card 
                   key={loc.name}
                   className={cn(
-                    "cursor-pointer transition-all duration-300 group hover:shadow-2xl border-2 transform hover:-translate-y-1",
+                    "cursor-pointer transition-all duration-500 group hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border-none transform hover:-translate-y-2 rounded-[2.5rem] shadow-xl",
                     isSelected 
-                      ? 'border-accent bg-accent/5 shadow-xl shadow-accent/10' 
-                      : 'border-white bg-white hover:border-accent/30'
+                      ? 'bg-accent text-white' 
+                      : 'bg-white'
                   )}
                   onClick={() => handleExplore(loc.name)}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-8">
                     <div className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors",
-                      isSelected ? "bg-accent text-white" : "bg-primary/5 text-primary group-hover:bg-accent/10 group-hover:text-accent"
+                      "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500",
+                      isSelected ? "bg-white/20 backdrop-blur-md text-white" : "bg-primary/5 text-primary group-hover:bg-accent/10 group-hover:text-accent"
                     )}>
-                      <Icon className="w-6 h-6" />
+                      <Icon className="w-8 h-8" />
                     </div>
                     <h4 className={cn(
-                      "font-bold text-xl mb-2 transition-colors",
-                      isSelected ? "text-accent" : "text-primary group-hover:text-accent"
+                      "font-bold text-xl mb-3 transition-colors",
+                      isSelected ? "text-white" : "text-primary group-hover:text-accent"
                     )}>
                       {loc.name}
                     </h4>
-                    <p className="text-sm text-primary/60 font-medium leading-relaxed">
+                    <p className={cn(
+                      "text-sm font-medium leading-relaxed transition-colors",
+                      isSelected ? "text-white/80" : "text-primary/60"
+                    )}>
                       {loc.description}
                     </p>
                   </CardContent>
@@ -93,86 +94,86 @@ export function VirtualGuide() {
             })}
           </div>
 
-          {/* AI Result Content Area */}
-          <div className="lg:col-span-7 min-h-[500px] h-full">
+          <div className="lg:col-span-7 min-h-[600px] h-full">
             {!selected && (
-              <div className="h-full min-h-[500px] flex flex-col items-center justify-center p-12 bg-white/50 backdrop-blur-sm rounded-[2rem] border-2 border-dashed border-primary/20 transition-all duration-500">
-                <div className="bg-primary/5 p-6 rounded-full mb-6">
-                  <Map className="w-16 h-16 text-primary/30" />
+              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/50 backdrop-blur-sm rounded-[2.5rem] border-4 border-dashed border-primary/10 transition-all duration-500 shadow-inner">
+                <div className="bg-primary/5 p-8 rounded-full mb-8 shadow-inner">
+                  <Map className="w-20 h-20 text-primary/20" />
                 </div>
-                <h5 className="text-2xl font-bold text-primary mb-2 text-center">Ready to explore?</h5>
-                <p className="text-primary/50 font-medium text-center">Click on any location on the left to activate the AI guide.</p>
+                <h5 className="text-3xl font-bold text-primary mb-3 text-center">Ready to explore?</h5>
+                <p className="text-primary/40 font-bold uppercase tracking-widest text-sm text-center">Select a location to activate AI insights</p>
               </div>
             )}
 
             {loading && (
-              <div className="h-full min-h-[500px] flex flex-col items-center justify-center p-12 bg-white/80 backdrop-blur-sm rounded-[2rem] border-2 border-accent/20 shadow-2xl animate-pulse">
-                <Loader2 className="w-20 h-20 text-accent mb-8 animate-spin" />
-                <h5 className="text-2xl font-bold text-accent animate-pulse">Consulting AI Guide...</h5>
-                <p className="text-accent/60 mt-4 font-bold uppercase tracking-widest text-xs">Fetching dynamic campus insights</p>
+              <div className="h-full min-h-[600px] flex flex-col items-center justify-center p-12 bg-white/80 backdrop-blur-sm rounded-[2.5rem] border-none shadow-2xl animate-pulse">
+                <Loader2 className="w-24 h-24 text-accent mb-10 animate-spin" />
+                <h5 className="text-3xl font-bold text-accent animate-pulse">Consulting AI Guide...</h5>
+                <p className="text-accent/60 mt-6 font-black uppercase tracking-[0.3em] text-xs">Fetching dynamic campus insights</p>
               </div>
             )}
 
             {info && !loading && (
-              <div className="animate-in fade-in zoom-in-95 slide-in-from-bottom-8 duration-700 h-full">
-                <Card className="shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border-none overflow-hidden rounded-[2.5rem] bg-white h-full">
-                  <div className="bg-primary p-8 md:p-10 text-white flex justify-between items-center">
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <Sparkles className="text-accent w-5 h-5 fill-accent" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">AI-Powered Tour</span>
+              <div className="animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 h-full">
+                <Card className="shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-none overflow-hidden rounded-[2.5rem] bg-white h-full">
+                  <div className="bg-primary p-10 md:p-14 text-white flex justify-between items-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full -mr-32 -mt-32 blur-[80px]"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-3 mb-5">
+                        <Sparkles className="text-accent w-6 h-6 fill-accent" />
+                        <span className="text-[11px] font-black uppercase tracking-[0.4em] text-accent">AI-Powered Virtual Tour</span>
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-headline font-bold leading-none">{selected}</h3>
+                      <h3 className="text-4xl md:text-5xl font-headline font-bold leading-none tracking-tight">{selected}</h3>
                     </div>
-                    <div className="hidden sm:block">
+                    <div className="hidden sm:block relative z-10">
                       {locations.find(l => l.name === selected)?.icon && (
-                        <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-md">
-                          {React.createElement(locations.find(l => l.name === selected)!.icon, { className: "w-8 h-8 text-white" })}
+                        <div className="p-6 bg-white/10 rounded-[2rem] backdrop-blur-md border border-white/20 shadow-2xl">
+                          {React.createElement(locations.find(l => l.name === selected)!.icon, { className: "w-10 h-10 text-white" })}
                         </div>
                       )}
                     </div>
                   </div>
                   
-                  <CardContent className="p-8 md:p-12 space-y-10">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 text-primary">
-                        <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center">
-                          <Info size={18} className="text-primary" />
+                  <CardContent className="p-10 md:p-16 space-y-12">
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4 text-primary">
+                        <div className="w-10 h-10 rounded-2xl bg-primary/5 flex items-center justify-center shadow-sm">
+                          <Info size={22} className="text-primary" />
                         </div>
-                        <h5 className="font-bold text-lg">About this Facility</h5>
+                        <h5 className="font-bold text-2xl tracking-tight">Academic Overview</h5>
                       </div>
-                      <p className="text-primary/80 leading-relaxed text-lg font-medium pl-11">
+                      <p className="text-primary/80 leading-relaxed text-xl font-medium pl-14">
                         {info.description}
                       </p>
                     </div>
                     
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 text-primary">
-                        <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center">
-                          <Sparkles size={18} className="text-accent" />
+                    <div className="space-y-8">
+                      <div className="flex items-center gap-4 text-primary">
+                        <div className="w-10 h-10 rounded-2xl bg-accent/5 flex items-center justify-center shadow-sm">
+                          <Sparkles size={22} className="text-accent" />
                         </div>
-                        <h5 className="font-bold text-lg">Key Highlights</h5>
+                        <h5 className="font-bold text-2xl tracking-tight">Campus Highlights</h5>
                       </div>
-                      <ul className="grid grid-cols-1 gap-4 pl-11">
+                      <ul className="grid grid-cols-1 gap-6 pl-14">
                         {info.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-accent/20 transition-all group">
-                            <div className="mt-1.5 w-2 h-2 rounded-full bg-accent shrink-0 shadow-[0_0_10px_rgba(var(--accent),0.5)]" />
-                            <span className="text-primary/70 font-bold text-sm md:text-base leading-relaxed group-hover:text-primary transition-colors">{h}</span>
+                          <li key={i} className="flex items-start gap-5 p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-accent/30 transition-all group hover:bg-white hover:shadow-xl">
+                            <div className="mt-2 w-3 h-3 rounded-full bg-accent shrink-0 shadow-[0_0_15px_rgba(var(--accent),0.6)]" />
+                            <span className="text-primary/70 font-bold text-base md:text-lg leading-relaxed group-hover:text-primary transition-colors">{h}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="bg-accent/5 p-8 rounded-[2rem] border-2 border-dashed border-accent/20 relative overflow-hidden group">
-                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform">
-                        <Lightbulb size={60} className="text-accent" />
+                    <div className="bg-accent/5 p-10 rounded-[2.5rem] border-2 border-dashed border-accent/30 relative overflow-hidden group hover:bg-accent/10 transition-colors">
+                      <div className="absolute -top-4 -right-4 p-8 opacity-10 group-hover:rotate-12 group-hover:scale-110 transition-transform">
+                        <Lightbulb size={100} className="text-accent" />
                       </div>
                       <div className="relative z-10">
-                        <h5 className="font-black text-accent text-xs uppercase tracking-[0.25em] mb-4 flex items-center gap-2">
-                          <Lightbulb size={16} />
-                          Visitor Tip
+                        <h5 className="font-black text-accent text-xs uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+                          <Lightbulb size={20} />
+                          Virtual Guide Tip
                         </h5>
-                        <p className="text-primary text-xl font-headline italic font-bold leading-relaxed">
+                        <p className="text-primary text-2xl md:text-3xl font-headline italic font-bold leading-tight">
                           "{info.visitorTips}"
                         </p>
                       </div>

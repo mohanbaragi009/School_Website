@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -51,34 +52,34 @@ export function AiRefinementTool() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <Card className="shadow-2xl border-none bg-white/10 backdrop-blur-md">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-white">
-              <ClipboardCheck className="text-accent" />
+        <Card className="shadow-2xl border-none bg-white/10 backdrop-blur-md rounded-[2.5rem]">
+          <CardHeader className="p-10 pb-4">
+            <CardTitle className="flex items-center gap-4 text-white text-2xl">
+              <ClipboardCheck className="text-accent w-8 h-8" />
               Input Draft
             </CardTitle>
-            <CardDescription className="text-blue-100/60 font-medium">Paste your school announcement or message draft below.</CardDescription>
+            <CardDescription className="text-blue-100/60 font-medium text-lg">Paste your school announcement or message draft below.</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="p-10 pt-4 space-y-8">
             <Textarea 
               placeholder="Example: School is closed on Friday due to sports day event near the ground. Bring your water bottles..."
-              className="min-h-[300px] bg-white/5 border-white/10 text-white placeholder:text-white/20 text-base resize-none focus:ring-accent"
+              className="min-h-[350px] bg-white/5 border-white/10 text-white placeholder:text-white/20 text-lg resize-none focus:ring-accent rounded-[2rem] p-6"
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
             <Button 
               onClick={handleRefine} 
-              className="w-full bg-accent hover:bg-accent/90 py-8 text-xl font-bold rounded-2xl shadow-xl shadow-accent/20 transition-all hover:scale-[1.02]"
+              className="w-full bg-accent hover:bg-accent/90 py-10 text-xl font-bold rounded-[2rem] shadow-2xl shadow-accent/40 transition-all hover:scale-[1.03] active:scale-95"
               disabled={loading}
             >
               {loading ? (
                 <>
-                  <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                  <Loader2 className="mr-4 h-8 w-8 animate-spin" />
                   Analyzing Content...
                 </>
               ) : (
                 <>
-                  <Sparkles className="mr-3 h-6 w-6" />
+                  <Sparkles className="mr-4 h-8 w-8" />
                   Refine with AI
                 </>
               )}
@@ -86,69 +87,70 @@ export function AiRefinementTool() {
           </CardContent>
         </Card>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {!result && !loading && (
-            <div className="h-full flex flex-col items-center justify-center p-12 bg-white/5 border-2 border-dashed border-white/10 rounded-2xl min-h-[450px]">
-              <Info className="text-white/30 w-16 h-16 mb-6" />
-              <p className="text-white/50 text-center text-lg font-medium">
-                Refinement suggestions will appear here once you submit your draft.
+            <div className="h-full flex flex-col items-center justify-center p-16 bg-white/5 border-4 border-dashed border-white/10 rounded-[2.5rem] min-h-[500px] shadow-inner">
+              <Info className="text-white/20 w-20 h-20 mb-8" />
+              <p className="text-white/40 text-center text-xl font-bold uppercase tracking-widest">
+                AI Suggestions will appear here
               </p>
             </div>
           )}
 
           {loading && (
-            <div className="h-full flex flex-col items-center justify-center p-12 bg-white/5 border-2 border-dashed border-accent/30 rounded-2xl min-h-[450px] animate-pulse">
-              <Loader2 className="text-accent w-16 h-16 mb-6 animate-spin" />
-              <p className="text-accent text-center text-lg font-bold">
-                Our AI is analyzing your text for tone and clarity...
+            <div className="h-full flex flex-col items-center justify-center p-16 bg-white/5 border-4 border-dashed border-accent/40 rounded-[2.5rem] min-h-[500px] animate-pulse">
+              <Loader2 className="text-accent w-24 h-24 mb-10 animate-spin" />
+              <p className="text-accent text-center text-2xl font-black uppercase tracking-[0.2em]">
+                Analyzing Tone & Clarity...
               </p>
             </div>
           )}
 
           {result && (
-            <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-700">
-              <Card className="border-none bg-white shadow-2xl">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xs uppercase tracking-widest text-green-600 font-bold flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <div className="space-y-8 animate-in fade-in slide-in-from-right-12 duration-700">
+              <Card className="border-none bg-white shadow-2xl rounded-[2rem] transform hover:scale-[1.02] transition-transform">
+                <CardHeader className="p-8 pb-3">
+                  <CardTitle className="text-[11px] uppercase tracking-[0.3em] text-green-600 font-black flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
                     Clarity Improvements
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-primary font-medium leading-relaxed">{result.clarityImprovements}</p>
+                <CardContent className="p-8 pt-0">
+                  <p className="text-primary font-bold text-lg leading-relaxed">{result.clarityImprovements}</p>
                 </CardContent>
               </Card>
 
-              <Card className="border-none bg-white shadow-2xl">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xs uppercase tracking-widest text-blue-600 font-bold flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+              <Card className="border-none bg-white shadow-2xl rounded-[2rem] transform hover:scale-[1.02] transition-transform delay-75">
+                <CardHeader className="p-8 pb-3">
+                  <CardTitle className="text-[11px] uppercase tracking-[0.3em] text-blue-600 font-black flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
                     Tone Adjustments
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-primary font-medium leading-relaxed">{result.toneAdjustments}</p>
+                <CardContent className="p-8 pt-0">
+                  <p className="text-primary font-bold text-lg leading-relaxed">{result.toneAdjustments}</p>
                 </CardContent>
               </Card>
 
-              <Card className="border-none bg-white shadow-2xl">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xs uppercase tracking-widest text-purple-600 font-bold flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+              <Card className="border-none bg-white shadow-2xl rounded-[2rem] transform hover:scale-[1.02] transition-transform delay-150">
+                <CardHeader className="p-8 pb-3">
+                  <CardTitle className="text-[11px] uppercase tracking-[0.3em] text-purple-600 font-black flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
                     Conciseness Edits
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-primary font-medium leading-relaxed">{result.concisenessEdits}</p>
+                <CardContent className="p-8 pt-0">
+                  <p className="text-primary font-bold text-lg leading-relaxed">{result.concisenessEdits}</p>
                 </CardContent>
               </Card>
 
-              <div className="bg-accent p-8 rounded-2xl text-white shadow-2xl transform hover:-translate-y-1 transition-transform">
-                <h4 className="font-bold text-xl mb-3 flex items-center gap-3">
-                  <Sparkles size={24} className="text-white" /> 
-                  Overall Feedback
+              <div className="bg-accent p-10 rounded-[2.5rem] text-white shadow-2xl transform hover:-translate-y-2 transition-all group overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-1000"></div>
+                <h4 className="font-bold text-2xl mb-5 flex items-center gap-4 relative z-10">
+                  <Sparkles size={28} className="text-white" /> 
+                  AI Editor Feedback
                 </h4>
-                <p className="text-white/90 text-sm leading-relaxed font-medium">{result.overallFeedback}</p>
+                <p className="text-white/90 text-base leading-relaxed font-bold relative z-10">{result.overallFeedback}</p>
               </div>
             </div>
           )}
