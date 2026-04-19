@@ -29,8 +29,8 @@ export function Header() {
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-[60]">
-      {/* Top Bar - Desktop Only */}
-      <div className="bg-primary text-white py-4 hidden lg:block">
+      {/* Top Bar - Desktop Only - Extra Thick */}
+      <div className="bg-primary text-white py-5 hidden lg:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
           <div className="flex gap-8">
             <span className="flex items-center gap-2 opacity-90 hover:text-accent transition-colors cursor-pointer">
@@ -51,22 +51,20 @@ export function Header() {
         </div>
       </div>
       
-      {/* Signature Yellow Highlight Line */}
-      <div className="h-1.5 bg-[hsl(var(--highlight))] w-full"></div>
+      {/* Signature Yellow Highlight Line - Thicker and Separated */}
+      <div className="h-2 bg-[hsl(var(--highlight))] w-full"></div>
       
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4 xl:py-6 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
-          {/* Full Circle Logo Container */}
-          <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center p-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0">
-            <div className="relative w-full h-full">
-              <Image 
-                src={logoUrl} 
-                alt="SET Logo" 
-                fill 
-                className="object-contain"
-              />
-            </div>
+          {/* Full Circle Logo Container - Perfect Circle edge-to-edge */}
+          <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0">
+            <Image 
+              src={logoUrl} 
+              alt="SET Logo" 
+              fill 
+              className="object-cover rounded-full"
+            />
           </div>
           <div className="flex flex-col">
             <h1 className="text-2xl lg:text-3xl xl:text-4xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
@@ -87,7 +85,7 @@ export function Header() {
             </Link>
           ))}
           
-          <Button asChild className="bg-accent hover:bg-accent/90 rounded-full px-8 xl:px-10 text-[11px] xl:text-xs font-bold uppercase tracking-[0.2em] h-12 shadow-xl shadow-accent/20">
+          <Button asChild className="bg-accent hover:bg-accent/90 rounded-full px-8 xl:px-10 text-[11px] xl:text-xs font-bold uppercase tracking-[0.2em] h-12 shadow-xl shadow-accent/20 whitespace-nowrap">
             <Link href="#staff">Staff Portal</Link>
           </Button>
         </nav>
@@ -105,10 +103,8 @@ export function Header() {
                 <SheetHeader className="p-8 border-b border-white/10">
                   <div className="flex items-center justify-between">
                     <SheetTitle className="text-left flex items-center gap-4">
-                      <div className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
-                        <div className="relative w-full h-full">
-                          <Image src={logoUrl} alt="Logo" fill className="object-contain" />
-                        </div>
+                      <div className="relative w-16 h-16 bg-white rounded-full shadow-lg overflow-hidden shrink-0">
+                        <Image src={logoUrl} alt="Logo" fill className="object-cover rounded-full" />
                       </div>
                       <div className="text-white">
                         <p className="font-headline font-bold text-2xl leading-none">Seshadripuram</p>

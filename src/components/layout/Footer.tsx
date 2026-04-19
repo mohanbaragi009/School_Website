@@ -26,7 +26,7 @@ export function Footer() {
   return (
     <div className="relative">
       {/* Signature Yellow Highlight Line */}
-      <div className="h-1.5 bg-[hsl(var(--highlight))] w-full relative z-10"></div>
+      <div className="h-2 bg-[hsl(var(--highlight))] w-full relative z-10"></div>
       
       {/* Glassmorphic Footer Body */}
       <footer className="bg-primary/95 backdrop-blur-2xl text-white pt-24 pb-12 overflow-hidden border-t border-white/10">
@@ -39,16 +39,14 @@ export function Footer() {
             {/* Column 1: School Info */}
             <div className="space-y-10">
               <div className="flex items-center gap-5">
-                {/* Full Circle Logo Container */}
-                <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center p-2 shadow-2xl rotate-3 group hover:rotate-0 transition-transform duration-500 overflow-hidden shrink-0">
-                  <div className="relative w-full h-full">
-                    <Image 
-                      src={logoUrl} 
-                      alt="Seshadripuram Logo" 
-                      fill 
-                      className="object-contain"
-                    />
-                  </div>
+                {/* Full Circle Logo Container - Perfect circle edge-to-edge */}
+                <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl group hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0">
+                  <Image 
+                    src={logoUrl} 
+                    alt="Seshadripuram Logo" 
+                    fill 
+                    className="object-cover rounded-full"
+                  />
                 </div>
                 <div>
                   <h2 className="text-2xl lg:text-3xl font-headline font-bold leading-tight tracking-tight">SESHADRIPURAM</h2>
