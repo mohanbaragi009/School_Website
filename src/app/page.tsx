@@ -19,7 +19,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div id="home" className="relative">
+        <div id="home">
           <NewsBanner />
           <Hero />
         </div>
@@ -68,18 +68,18 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
                     <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform hover:-translate-y-2 transition-transform duration-500 border border-slate-100">
-                      <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-[2rem] w-full" />
+                      <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-[2.5rem] w-full" />
                     </div>
                     <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-75 border border-slate-100">
-                      <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-[2rem] w-full" />
+                      <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-[2.5rem] w-full" />
                     </div>
                   </div>
                   <div className="space-y-4 pt-8">
                     <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl transform -translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-150 border border-slate-100">
-                      <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-[2rem] w-full" />
+                      <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-[2.5rem] w-full" />
                     </div>
                     <div className="bg-white p-3 rounded-[2.5rem] shadow-2xl hover:-translate-y-2 transition-transform duration-500 delay-300 border border-slate-100">
-                      <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-[2rem] w-full" />
+                      <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-[2.5rem] w-full" />
                     </div>
                   </div>
                 </div>
