@@ -1,9 +1,7 @@
 
 import React from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BookOpen, Users, Trophy, Sparkles } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   return (
@@ -20,9 +18,11 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-12">
-        <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/40 backdrop-blur-2xl border border-white/60 text-primary text-[10px] font-black rounded-full uppercase tracking-[0.3em] shadow-xl mx-auto transform hover:scale-105 transition-transform duration-500">
-          <Sparkles size={14} className="text-accent animate-spin-slow" />
-          90+ Years of Academic Excellence
+        {/* Premium Badge from Image */}
+        <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-2xl border border-white/60 rounded-2xl shadow-xl mx-auto transform hover:scale-105 transition-all duration-500 group">
+          <Sparkles className="text-accent w-6 h-6 animate-pulse" />
+          <span className="text-2xl font-black text-primary tracking-tight">90+</span>
+          <span className="text-[10px] font-black text-muted-foreground/60 uppercase tracking-[0.3em] border-l border-primary/10 pl-4 hidden sm:block">Years of Excellence</span>
         </div>
         
         <div className="space-y-6">
@@ -42,10 +42,10 @@ export function Hero() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8 w-full max-w-lg mx-auto sm:max-w-none">
-          <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-base px-14 py-10 rounded-full font-bold shadow-[0_20px_40px_-10px_rgba(var(--primary),0.3)] transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
+          <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-base px-14 py-10 rounded-[2rem] font-bold shadow-[0_20px_40px_-10px_rgba(var(--primary),0.3)] transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
             Enroll Now <ArrowRight className="ml-3 h-6 w-6" />
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto text-primary border-primary/10 bg-white/40 backdrop-blur-md hover:bg-white text-base px-14 py-10 rounded-full font-bold transition-all hover:scale-105 active:scale-95 uppercase tracking-widest border-2">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto text-primary border-primary/10 bg-white/40 backdrop-blur-md hover:bg-white text-base px-14 py-10 rounded-[2rem] font-bold transition-all hover:scale-105 active:scale-95 uppercase tracking-widest border-2">
             Virtual Tour
           </Button>
         </div>
