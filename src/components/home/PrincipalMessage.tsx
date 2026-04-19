@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 import { Quote } from 'lucide-react';
@@ -11,17 +12,17 @@ export function PrincipalMessage() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 xl:gap-20">
           {/* Image Container */}
-          <div className="w-full lg:w-5/12 max-w-md lg:max-w-none relative">
+          <div className="w-full lg:w-5/12 max-w-2xl lg:max-w-none relative">
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
             
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group border-8 border-white">
+            <div className="relative aspect-video lg:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl group border-8 border-white bg-muted">
               <Image 
-                src={principalImg?.imageUrl || 'https://picsum.photos/seed/principal/400/500'} 
+                src={principalImg?.imageUrl || 'https://picsum.photos/seed/principal/600/400'} 
                 alt="Principal Portrait"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                data-ai-hint="professional portrait"
+                className="object-cover hover:scale-105 transition-transform duration-1000"
+                data-ai-hint="principal woman desk"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6 md:p-8 text-white">
                 <p className="font-bold text-xl md:text-2xl leading-none">Dr. Meera K. Rao</p>
@@ -30,7 +31,7 @@ export function PrincipalMessage() {
             </div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-4 -right-4 md:bottom-12 md:-right-8 bg-accent text-white p-4 md:p-6 rounded-2xl shadow-xl z-20 text-center transform rotate-3">
+            <div className="absolute -bottom-4 -right-2 md:bottom-12 md:-right-8 bg-accent text-white p-4 md:p-6 rounded-2xl shadow-xl z-20 text-center transform rotate-3 scale-90 md:scale-100">
               <div className="text-2xl md:text-3xl font-bold">25+</div>
               <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-90">Years Experience</div>
             </div>
@@ -58,7 +59,7 @@ export function PrincipalMessage() {
               Founded on the principles of academic rigor and holistic development, our institution has remained at the forefront of educational innovation in Bangalore for nearly a century. We welcome you to explore our vibrant campus and join a community dedicated to excellence and integrity.
             </p>
             
-            <div className="pt-4 flex items-center gap-6">
+            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <div>
                 <div className="relative w-40 h-16 grayscale opacity-80">
                   <Image 
@@ -72,7 +73,7 @@ export function PrincipalMessage() {
                 <p className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest font-semibold">Ph.D. in Educational Leadership</p>
               </div>
               <div className="h-16 w-px bg-border hidden sm:block"></div>
-              <div className="hidden sm:block">
+              <div className="sm:block">
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-1">Office Hours</p>
                 <p className="text-sm font-semibold text-primary">Mon - Fri: 9:00 AM - 11:00 AM</p>
               </div>

@@ -15,9 +15,9 @@
     },
     {
       "id": "principal-portrait",
-      "description": "Professional portrait of a school principal",
-      "imageUrl": "https://picsum.photos/seed/principal/400/500",
-      "imageHint": "professional portrait"
+      "description": "Professional portrait of the school principal at her desk",
+      "imageUrl": "https://picsum.photos/seed/principal-desk-99/800/500",
+      "imageHint": "principal woman desk"
     },
     {
       "id": "academic-video-1",
