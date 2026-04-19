@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,19 +8,19 @@ export function Footer() {
   const logoUrl = getPlaceholderById('school-logo');
 
   const footerLinks = [
-    { title: "Admissions", href: "/admissions" },
-    { title: "Academic Calendar", href: "/calendar" },
-    { title: "Examination Results", href: "/exams" },
-    { title: "Campus Gallery", href: "/gallery" },
-    { title: "Alumni Association", href: "/alumni" },
+    { title: "Admissions", href: "#home" },
+    { title: "Academic Calendar", href: "#academics" },
+    { title: "Examination Results", href: "#academics" },
+    { title: "Campus Gallery", href: "#student-life" },
+    { title: "Alumni Association", href: "#contact" },
   ];
 
   const departments = [
-    { title: "Science & Technology", href: "/dept/science" },
-    { title: "Arts & Humanities", href: "/dept/arts" },
-    { title: "Commerce & Business", href: "/dept/commerce" },
-    { title: "Physical Education", href: "/dept/sports" },
-    { title: "Research & Innovation", href: "/dept/research" },
+    { title: "Science & Technology", href: "#academics" },
+    { title: "Arts & Humanities", href: "#academics" },
+    { title: "Commerce & Business", href: "#academics" },
+    { title: "Physical Education", href: "#student-life" },
+    { title: "Research & Innovation", href: "#academics" },
   ];
 
   return (
@@ -132,9 +131,9 @@ export function Footer() {
             © 2024 Seshadripuram Institute. <span className="hidden sm:inline">Crafted with excellence.</span>
           </p>
           <div className="flex flex-wrap justify-center gap-8">
-            <Link href="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-accent transition-colors">Terms</Link>
-            <Link href="/sitemap" className="hover:text-accent transition-colors">Sitemap</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Privacy</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Terms</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { NewsBanner } from '@/components/home/NewsBanner';
@@ -16,10 +15,12 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <NewsBanner />
-        <Hero />
+        <div id="home">
+          <NewsBanner />
+          <Hero />
+        </div>
         
-        <section className="py-20 bg-background overflow-hidden">
+        <section id="about" className="py-20 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
@@ -79,13 +80,26 @@ export default function Home() {
           </div>
         </section>
 
-        <PrincipalMessage />
-        <VirtualGuide />
-        <AcademicCalendar />
-        <AcademicVideos />
-        <AiRefinementTool />
+        <div id="leadership">
+          <PrincipalMessage />
+        </div>
+        
+        <div id="student-life">
+          <VirtualGuide />
+        </div>
+
+        <div id="academics">
+          <AcademicCalendar />
+          <AcademicVideos />
+        </div>
+
+        <div id="staff">
+          <AiRefinementTool />
+        </div>
       </main>
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
       <Toaster />
     </div>
   );

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -26,11 +25,11 @@ export function Header() {
   const logoUrl = getPlaceholderById('school-logo');
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Academics', href: '/academics' },
-    { name: 'Admissions', href: '/admissions' },
-    { name: 'Student Life', href: '/activities' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '#home' },
+    { name: 'Academics', href: '#academics' },
+    { name: 'Admissions', href: '#home' }, // Scrolls back to Hero CTA
+    { name: 'Student Life', href: '#student-life' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -44,16 +43,16 @@ export function Header() {
             <span className="flex items-center gap-1.5 opacity-80"><Mail size={12} className="text-accent" /> info@seshadripuram.edu</span>
           </div>
           <div className="flex gap-6">
-            <Link href="/alumni" className="hover:text-accent transition-colors">Alumni</Link>
-            <Link href="/careers" className="hover:text-accent transition-colors">Careers</Link>
-            <Link href="/admissions" className="text-accent animate-pulse">Admissions Open</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Alumni</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Careers</Link>
+            <Link href="#home" className="text-accent animate-pulse">Admissions Open</Link>
           </div>
         </div>
       </div>
       
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 md:gap-4 group">
+        <Link href="#home" className="flex items-center gap-2 md:gap-4 group">
           <div className="relative w-10 h-10 md:w-16 md:h-16 overflow-hidden rounded-2xl border-2 border-primary/5 bg-white p-1 shadow-sm group-hover:shadow-md transition-shadow">
             <Image 
               src={logoUrl} 
@@ -86,20 +85,20 @@ export function Header() {
               About
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56 p-2 rounded-xl">
-              <DropdownMenuItem asChild><Link href="/about/vision" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Vision & Mission</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link href="/about/history" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Our History</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link href="/about/leadership" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Leadership</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="#about" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Vision & Mission</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="#about" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Our History</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="#leadership" className="w-full cursor-pointer py-2 rounded-lg font-bold text-xs uppercase tracking-wider">Leadership</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button size="sm" className="bg-accent hover:bg-accent/90 rounded-full px-8 text-xs font-bold uppercase tracking-widest h-10 shadow-lg shadow-accent/20">
-            Staff Portal
+          <Button asChild size="sm" className="bg-accent hover:bg-accent/90 rounded-full px-8 text-xs font-bold uppercase tracking-widest h-10 shadow-lg shadow-accent/20">
+            <Link href="#staff">Staff Portal</Link>
           </Button>
         </nav>
 
         {/* Mobile Navigation (Sheet) */}
         <div className="lg:hidden flex items-center gap-2">
-          <Link href="/admissions">
+          <Link href="#home">
             <Button size="sm" variant="outline" className="border-accent text-accent rounded-full text-[10px] h-8 px-4 font-bold uppercase">Apply</Button>
           </Link>
           <Sheet>
@@ -130,30 +129,33 @@ export function Header() {
                 <div className="flex-grow overflow-y-auto py-8 px-6">
                   <nav className="space-y-4">
                     {navLinks.map((link) => (
-                      <Link 
-                        key={link.name} 
-                        href={link.href} 
-                        className="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-accent transition-all group"
-                      >
-                        <span className="text-lg font-bold tracking-tight">{link.name}</span>
-                        <ChevronRight className="w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                      <SheetClose asChild key={link.name}>
+                        <Link 
+                          href={link.href} 
+                          className="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-accent transition-all group"
+                        >
+                          <span className="text-lg font-bold tracking-tight">{link.name}</span>
+                          <ChevronRight className="w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </SheetClose>
                     ))}
                     <div className="pt-6">
                        <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4 ml-4">About Institution</p>
                        <div className="grid grid-cols-1 gap-3">
-                          <Link href="/about/vision" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Vision & Mission</Link>
-                          <Link href="/about/history" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Our History</Link>
-                          <Link href="/about/leadership" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Leadership</Link>
+                          <SheetClose asChild><Link href="#about" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Vision & Mission</Link></SheetClose>
+                          <SheetClose asChild><Link href="#about" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Our History</Link></SheetClose>
+                          <SheetClose asChild><Link href="#leadership" className="p-4 bg-white/5 rounded-2xl font-bold text-sm">Leadership</Link></SheetClose>
                        </div>
                     </div>
                   </nav>
                 </div>
 
                 <div className="p-6 border-t border-white/10 space-y-4">
-                  <Button className="w-full bg-accent hover:bg-accent/90 rounded-2xl py-8 text-lg font-bold shadow-xl shadow-accent/20">
-                    Staff Login
-                  </Button>
+                  <SheetClose asChild>
+                    <Button asChild className="w-full bg-accent hover:bg-accent/90 rounded-2xl py-8 text-lg font-bold shadow-xl shadow-accent/20">
+                      <Link href="#staff">Staff Login</Link>
+                    </Button>
+                  </SheetClose>
                   <div className="flex justify-center gap-6 pt-4 text-white/60">
                     <Phone size={20} />
                     <Mail size={20} />
