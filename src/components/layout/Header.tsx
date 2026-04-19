@@ -35,13 +35,13 @@ export function Header() {
       
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
-          {/* Circular Logo - Perfect Edge-to-Edge */}
-          <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0">
+          {/* Circular Logo - Premium Edge-to-Edge Circle */}
+          <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0 flex items-center justify-center">
             <Image 
               src={logoUrl} 
               alt="SET Logo" 
               fill 
-              className="object-cover"
+              className="object-cover p-1"
             />
           </div>
           <div className="flex flex-col">

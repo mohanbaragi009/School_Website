@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -37,18 +38,18 @@ export function Footer() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            {/* Column 1: School Info - Moved firmly to the left */}
+            {/* Column 1: School Info - Firmly Aligned Left */}
             <div className="md:col-span-4 space-y-8">
               <div className="flex items-center gap-4 lg:gap-6">
-                <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl group hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0 border-4 border-white">
+                <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl group hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0 border-4 border-white flex items-center justify-center">
                   <Image 
                     src={logoUrl} 
                     alt="Seshadripuram Logo" 
                     fill 
-                    className="object-cover"
+                    className="object-cover p-1"
                   />
                 </div>
-                <div>
+                <div className="text-left">
                   <h2 className="text-2xl lg:text-3xl font-headline font-bold leading-none tracking-tight">SESHADRIPURAM</h2>
                   <p className="text-[10px] text-accent font-black uppercase tracking-[0.5em] mt-2">Institute</p>
                 </div>
@@ -65,7 +66,7 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Column 2: Quick Links */}
+            {/* Column 2: Quick Links - Explore */}
             <div className="md:col-span-2 space-y-8">
               <div className="space-y-4">
                 <div className="w-12 h-1 bg-[hsl(var(--highlight))] rounded-full"></div>
