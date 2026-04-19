@@ -35,15 +35,17 @@ export function Header() {
       
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
-          {/* Circular Logo - Premium Edge-to-Edge Circle */}
+          {/* Circular Logo - Refined perfect circle container */}
           <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0 flex items-center justify-center">
-            <Image 
-              src={logoUrl} 
-              alt="SET Logo" 
-              fill 
-              className="object-cover p-2"
-              priority
-            />
+            <div className="relative w-full h-full p-2">
+              <Image 
+                src={logoUrl} 
+                alt="SET Logo" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
           <div className="flex flex-col">
             <h1 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
@@ -84,8 +86,10 @@ export function Header() {
                 <SheetHeader className="p-8 border-b border-white/10">
                   <div className="flex items-center justify-between">
                     <SheetTitle className="text-left flex items-center gap-4">
-                      <div className="relative w-16 h-16 bg-white rounded-full shadow-lg overflow-hidden shrink-0">
-                        <Image src={logoUrl} alt="Logo" fill className="object-cover p-2" />
+                      <div className="relative w-16 h-16 bg-white rounded-full shadow-lg overflow-hidden shrink-0 flex items-center justify-center">
+                        <div className="relative w-full h-full p-2">
+                          <Image src={logoUrl} alt="Logo" fill className="object-contain" />
+                        </div>
                       </div>
                       <div className="text-white">
                         <p className="font-bold text-2xl leading-none">Seshadripuram</p>

@@ -41,14 +41,16 @@ export function Footer() {
             {/* Column 1: School Info - Firmly Aligned Left */}
             <div className="md:col-span-4 space-y-8">
               <div className="flex items-center gap-4 lg:gap-6">
-                {/* Circular Logo - Premium Edge-to-Edge Circle */}
+                {/* Circular Logo - Refined perfect circle container */}
                 <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl group hover:scale-105 transition-transform duration-500 overflow-hidden shrink-0 border-4 border-white flex items-center justify-center">
-                  <Image 
-                    src={logoUrl} 
-                    alt="Seshadripuram Logo" 
-                    fill 
-                    className="object-cover p-2"
-                  />
+                  <div className="relative w-full h-full p-2">
+                    <Image 
+                      src={logoUrl} 
+                      alt="Seshadripuram Logo" 
+                      fill 
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="text-left">
                   <h2 className="text-2xl lg:text-3xl font-headline font-bold leading-none tracking-tight">SESHADRIPURAM</h2>
