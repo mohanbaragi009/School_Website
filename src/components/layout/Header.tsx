@@ -1,9 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import Link from 'next/link';
-import { Menu, X, Search, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, Search, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
   DropdownMenu, 
@@ -11,13 +10,19 @@ import {
   DropdownMenuItem, 
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-      <div className="bg-primary text-white py-2 hidden md:block">
+      {/* Top Bar - Desktop Only */}
+      <div className="bg-primary text-white py-2 hidden lg:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-xs">
           <div className="flex gap-4">
             <span className="flex items-center gap-1"><MapPin size={14} /> Seshadripuram, Bangalore</span>
@@ -25,64 +30,78 @@ export function Header() {
             <span className="flex items-center gap-1"><Mail size={14} /> info@seshadripuram.edu</span>
           </div>
           <div className="flex gap-4">
-            <Link href="/alumni" className="hover:text-accent transition-colors">Alumni</Link>
-            <Link href="/careers" className="hover:text-accent transition-colors">Careers</Link>
+            <Link href="/alumni" className="hover:text-accent transition-colors font-medium">Alumni</Link>
+            <Link href="/careers" className="hover:text-accent transition-colors font-medium">Careers</Link>
             <Link href="/admissions" className="hover:text-accent transition-colors font-bold text-accent">Admissions Open</Link>
           </div>
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">SG</div>
+      {/* Main Navigation */}
+      <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl group-hover:bg-accent transition-colors">SG</div>
           <div>
-            <h1 className="text-xl md:text-2xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
-            <p className="text-sm font-semibold text-accent tracking-widest">GATEWAY</p>
+            <h1 className="text-lg md:text-2xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
+            <p className="text-[10px] md:text-sm font-semibold text-accent tracking-[0.2em] md:tracking-widest uppercase">Gateway</p>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           <Link href="/" className="text-sm font-semibold hover:text-accent transition-colors">Home</Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1 focus:outline-none">
               About Us
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem><Link href="/about/vision">Vision & Mission</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="/about/history">Our History</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="/about/leadership">Leadership</Link></DropdownMenuItem>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem asChild><Link href="/about/vision" className="w-full cursor-pointer">Vision & Mission</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="/about/history" className="w-full cursor-pointer">Our History</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="/about/leadership" className="w-full cursor-pointer">Leadership</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="/academics" className="text-sm font-semibold hover:text-accent transition-colors">Academics</Link>
           <Link href="/admissions" className="text-sm font-semibold hover:text-accent transition-colors">Admissions</Link>
           <Link href="/activities" className="text-sm font-semibold hover:text-accent transition-colors">Student Life</Link>
           <Link href="/contact" className="text-sm font-semibold hover:text-accent transition-colors">Contact</Link>
-          <Button size="sm" className="bg-accent hover:bg-accent/90">Staff Portal</Button>
+          <Button size="sm" className="bg-accent hover:bg-accent/90 rounded-full px-6">Staff Portal</Button>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="lg:hidden text-primary p-2" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t py-4 px-4 space-y-4">
-          <Link href="/" className="block text-lg font-semibold text-primary">Home</Link>
-          <Link href="/about" className="block text-lg font-semibold text-primary">About Us</Link>
-          <Link href="/academics" className="block text-lg font-semibold text-primary">Academics</Link>
-          <Link href="/admissions" className="block text-lg font-semibold text-primary">Admissions</Link>
-          <Link href="/activities" className="block text-lg font-semibold text-primary">Student Life</Link>
-          <Link href="/contact" className="block text-lg font-semibold text-primary">Contact</Link>
-          <Button className="w-full bg-accent">Staff Portal</Button>
+        {/* Mobile Navigation (Sheet) */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/5">
+                <Menu size={28} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader className="border-b pb-4 mb-4">
+                <SheetTitle className="text-left flex items-center gap-2">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-xs">SG</div>
+                  <span className="font-headline font-bold text-primary">Seshadripuram Gateway</span>
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4">
+                <Link href="/" className="text-lg font-medium p-2 hover:bg-accent/5 rounded-md transition-colors">Home</Link>
+                <div className="space-y-3">
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-2">About Institution</p>
+                  <Link href="/about/vision" className="block text-base font-medium p-2 pl-4 hover:bg-accent/5 rounded-md">Vision & Mission</Link>
+                  <Link href="/about/history" className="block text-base font-medium p-2 pl-4 hover:bg-accent/5 rounded-md">Our History</Link>
+                  <Link href="/about/leadership" className="block text-base font-medium p-2 pl-4 hover:bg-accent/5 rounded-md">Leadership</Link>
+                </div>
+                <Link href="/academics" className="text-lg font-medium p-2 hover:bg-accent/5 rounded-md transition-colors">Academics</Link>
+                <Link href="/admissions" className="text-lg font-medium p-2 hover:bg-accent/5 rounded-md transition-colors text-accent">Admissions 2024</Link>
+                <Link href="/activities" className="text-lg font-medium p-2 hover:bg-accent/5 rounded-md transition-colors">Student Life</Link>
+                <Link href="/contact" className="text-lg font-medium p-2 hover:bg-accent/5 rounded-md transition-colors">Contact</Link>
+                <div className="pt-6 border-t mt-4">
+                  <Button className="w-full bg-accent hover:bg-accent/90 rounded-full py-6 text-lg font-bold">Staff Portal</Button>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      )}
+      </div>
     </header>
   );
 }
