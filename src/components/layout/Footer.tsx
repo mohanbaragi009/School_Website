@@ -68,7 +68,7 @@ export function Footer() {
 
             {/* Column 2: Quick Links */}
             <div className="space-y-10">
-              <h3 className="text-lg font-bold flex items-center gap-3">
+              <h3 className="text-lg font-bold flex flex-col gap-2">
                 <span className="w-8 h-1 bg-[hsl(var(--highlight))] rounded-full"></span>
                 Explore
               </h3>
@@ -86,7 +86,7 @@ export function Footer() {
 
             {/* Column 3: Departments */}
             <div className="space-y-10">
-              <h3 className="text-lg font-bold flex items-center gap-3">
+              <h3 className="text-lg font-bold flex flex-col gap-2">
                 <span className="w-8 h-1 bg-[hsl(var(--highlight))] rounded-full"></span>
                 Academics
               </h3>
@@ -104,7 +104,7 @@ export function Footer() {
 
             {/* Column 4: Contact Info */}
             <div className="space-y-10">
-              <h3 className="text-lg font-bold flex items-center gap-3">
+              <h3 className="text-lg font-bold flex flex-col gap-2">
                 <span className="w-8 h-1 bg-[hsl(var(--highlight))] rounded-full"></span>
                 Contact Us
               </h3>
