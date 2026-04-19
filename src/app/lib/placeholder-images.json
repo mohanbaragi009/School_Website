@@ -60,6 +60,30 @@
       "description": "Campus gardens",
       "imageUrl": "https://picsum.photos/seed/sch4/400/500",
       "imageHint": "campus gardens"
+    },
+    {
+      "id": "highlight-class",
+      "description": "Modern high-tech classroom",
+      "imageUrl": "https://picsum.photos/seed/modern-class-77/800/500",
+      "imageHint": "modern classroom"
+    },
+    {
+      "id": "highlight-lab",
+      "description": "Advanced chemistry laboratory",
+      "imageUrl": "https://picsum.photos/seed/science-lab-88/800/500",
+      "imageHint": "science laboratory"
+    },
+    {
+      "id": "highlight-library",
+      "description": "Spacious school library",
+      "imageUrl": "https://picsum.photos/seed/library-99/800/500",
+      "imageHint": "school library"
+    },
+    {
+      "id": "highlight-sports",
+      "description": "Professional basketball court",
+      "imageUrl": "https://picsum.photos/seed/sports-ground-11/800/500",
+      "imageHint": "sports complex"
     }
   ]
 }
