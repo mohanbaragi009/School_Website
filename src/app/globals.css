@@ -11,7 +11,7 @@
     --card-foreground: 218 50% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 218 50% 10%;
-    --primary: 218 50% 30%;
+    --primary: 218 50% 25%;
     --primary-foreground: 0 0% 98%;
     --secondary: 210 33% 90%;
     --secondary-foreground: 218 50% 30%;
@@ -27,50 +27,34 @@
     --radius: 0.75rem;
     --highlight: 48 96% 53%;
   }
-  .dark {
-    --background: 218 50% 3%;
-    --foreground: 210 33% 98%;
-    --card: 218 50% 5%;
-    --card-foreground: 210 33% 98%;
-    --popover: 218 50% 5%;
-    --popover-foreground: 210 33% 98%;
-    --primary: 210 33% 98%;
-    --primary-foreground: 218 50% 30%;
-    --secondary: 218 50% 10%;
-    --secondary-foreground: 210 33% 98%;
-    --muted: 218 50% 12%;
-    --muted-foreground: 210 20% 75%;
-    --accent: 265 72% 59%;
-    --accent-foreground: 210 33% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 33% 98%;
-    --border: 218 50% 15%;
-    --input: 218 50% 15%;
-    --ring: 265 72% 59%;
-  }
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body transition-colors duration-500;
+    @apply bg-background text-foreground font-body transition-colors duration-500 leading-relaxed;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
+    @apply font-headline tracking-tight;
   }
 }
 
-/* Custom Utilities for Smooth Micro-interactions */
+/* Custom Utilities for Premium Aesthetics */
 @layer utilities {
   .glass-premium {
-    @apply bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-2xl;
+    @apply bg-white/40 backdrop-blur-xl border border-white/60 shadow-2xl;
   }
   .transition-premium {
     @apply transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .text-balance {
+    text-wrap: balance;
   }
 }
