@@ -58,7 +58,7 @@ export function AcademicCalendar() {
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border-none w-full flex items-center justify-center scale-110 py-8"
+                className="rounded-md border-none w-full flex items-center justify-center scale-100 sm:scale-110 py-8"
               />
             </CardContent>
           </Card>
@@ -97,7 +97,7 @@ export function AcademicCalendar() {
                         <MapPin size={14} className="text-accent" /> {event.location}
                       </div>
                     </div>
-                    <button className="mt-6 flex items-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest">
+                    <button className="mt-6 w-full sm:w-auto py-2 flex items-center justify-center sm:justify-start text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 sm:border-none rounded-md sm:rounded-none">
                       Event Details <ChevronRight size={14} />
                     </button>
                   </CardContent>
@@ -106,7 +106,7 @@ export function AcademicCalendar() {
               
               <div className="flex flex-col items-center justify-center p-8 bg-white border-2 border-dashed border-border rounded-xl">
                 <p className="text-muted-foreground text-center mb-4">View more scheduled events for the current semester.</p>
-                <button className="text-accent font-bold hover:underline">Full Calendar PDF Download</button>
+                <button className="w-full sm:w-auto py-2 text-accent font-bold hover:underline transition-all">Full Calendar PDF Download</button>
               </div>
             </div>
           </div>

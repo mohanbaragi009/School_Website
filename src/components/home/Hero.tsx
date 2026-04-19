@@ -28,11 +28,11 @@ export function Hero() {
           <p className="text-lg text-blue-50 max-w-2xl mx-auto font-medium drop-shadow-md">
             Join Seshadripuram Gateway, where tradition meets innovation to create leaders of tomorrow.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-lg px-8 py-6 rounded-full font-bold">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 max-w-sm mx-auto sm:max-w-none">
+            <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-lg px-8 py-6 rounded-full font-bold">
               Enroll Now <ArrowRight className="ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary text-lg px-8 py-6 rounded-full font-bold">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white hover:text-primary text-lg px-8 py-6 rounded-full font-bold">
               Virtual Tour
             </Button>
           </div>

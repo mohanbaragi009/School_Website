@@ -32,14 +32,14 @@ export function AcademicVideos() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Life at Gateway</h2>
             <p className="text-muted-foreground italic leading-relaxed">
               Experience our vibrant campus life, academic achievements, and cultural celebrations through our digital media library.
             </p>
           </div>
-          <button className="px-6 py-3 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-lg uppercase tracking-widest text-xs">
+          <button className="w-full md:w-auto px-6 py-3 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all rounded-lg uppercase tracking-widest text-xs">
             Browse All Videos
           </button>
         </div>
