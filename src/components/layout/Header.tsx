@@ -35,9 +35,9 @@ export function Header() {
       
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-4 lg:gap-6 group">
-          {/* Circular Logo - Refined perfect circle container */}
+          {/* Circular Logo Container */}
           <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-500 overflow-hidden shrink-0 flex items-center justify-center">
-            <div className="relative w-full h-full p-2">
+            <div className="relative w-full h-full p-2.5">
               <Image 
                 src={logoUrl} 
                 alt="SET Logo" 
@@ -85,7 +85,7 @@ export function Header() {
               <div className="h-full flex flex-col text-white">
                 <SheetHeader className="p-8 border-b border-white/10">
                   <div className="flex items-center justify-between">
-                    <SheetTitle className="text-left flex items-center gap-4">
+                    <SheetTitle className="text-left flex items-center gap-4 text-white">
                       <div className="relative w-16 h-16 bg-white rounded-full shadow-lg overflow-hidden shrink-0 flex items-center justify-center">
                         <div className="relative w-full h-full p-2">
                           <Image src={logoUrl} alt="Logo" fill className="object-contain" />
