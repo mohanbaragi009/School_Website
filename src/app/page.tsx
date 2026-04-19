@@ -9,6 +9,8 @@ import { AcademicVideos } from '@/components/home/AcademicVideos';
 import { AiRefinementTool } from '@/components/admin/AiRefinementTool';
 import { VirtualGuide } from '@/components/home/VirtualGuide';
 import { LocationMap } from '@/components/home/LocationMap';
+import { Testimonials } from '@/components/home/Testimonials';
+import { ParentResources } from '@/components/home/ParentResources';
 import { Toaster } from '@/components/ui/toaster';
 import { getPlaceholderById } from '@/lib/placeholder-images';
 
@@ -89,6 +91,12 @@ export default function Home() {
         {/* Highlight Separator */}
         <div className="h-2 w-full bg-[hsl(var(--highlight))]"></div>
 
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* Primary Separator */}
+        <div className="h-2 w-full bg-primary"></div>
+
         {/* Leadership Section */}
         <div id="leadership" className="bg-slate-50 relative">
           <PrincipalMessage />
@@ -118,6 +126,12 @@ export default function Home() {
 
         {/* Highlight Separator */}
         <div className="h-2 w-full bg-[hsl(var(--highlight))]"></div>
+
+        {/* Parent Resources Section */}
+        <ParentResources />
+
+        {/* Primary Separator */}
+        <div className="h-2 w-full bg-primary"></div>
 
         {/* Staff Portal Section */}
         <div id="staff" className="relative overflow-hidden bg-primary py-24">

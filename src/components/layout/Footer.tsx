@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,9 +9,9 @@ export function Footer() {
   const logoUrl = getPlaceholderById('school-logo');
 
   const footerLinks = [
-    { title: "Admissions", href: "#home" },
+    { title: "Admissions", href: "#resources" },
     { title: "Academic Calendar", href: "#academics" },
-    { title: "Examination Results", href: "#academics" },
+    { title: "Examination Results", href: "#resources" },
     { title: "Campus Gallery", href: "#student-life" },
     { title: "Alumni Association", href: "#contact" },
   ];
