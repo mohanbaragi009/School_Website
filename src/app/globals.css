@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,24 +28,24 @@
     --highlight: 48 96% 53%;
   }
   .dark {
-    --background: 218 50% 10%;
-    --foreground: 210 33% 96%;
-    --card: 218 50% 12%;
-    --card-foreground: 210 33% 96%;
-    --popover: 218 50% 12%;
-    --popover-foreground: 210 33% 96%;
-    --primary: 210 33% 96%;
+    --background: 218 50% 3%;
+    --foreground: 210 33% 98%;
+    --card: 218 50% 5%;
+    --card-foreground: 210 33% 98%;
+    --popover: 218 50% 5%;
+    --popover-foreground: 210 33% 98%;
+    --primary: 210 33% 98%;
     --primary-foreground: 218 50% 30%;
-    --secondary: 218 50% 20%;
-    --secondary-foreground: 210 33% 96%;
-    --muted: 218 50% 20%;
-    --muted-foreground: 210 20% 65%;
+    --secondary: 218 50% 10%;
+    --secondary-foreground: 210 33% 98%;
+    --muted: 218 50% 12%;
+    --muted-foreground: 210 20% 75%;
     --accent: 265 72% 59%;
-    --accent-foreground: 210 33% 96%;
+    --accent-foreground: 210 33% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 33% 96%;
-    --border: 218 50% 20%;
-    --input: 218 50% 20%;
+    --destructive-foreground: 210 33% 98%;
+    --border: 218 50% 15%;
+    --input: 218 50% 15%;
     --ring: 265 72% 59%;
   }
 }
@@ -57,9 +58,19 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body transition-colors duration-500;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;
+  }
+}
+
+/* Custom Utilities for Smooth Micro-interactions */
+@layer utilities {
+  .glass-premium {
+    @apply bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-2xl;
+  }
+  .transition-premium {
+    @apply transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

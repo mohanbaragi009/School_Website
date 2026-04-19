@@ -11,94 +11,94 @@ const resources = [
     title: "Online Fee Payment",
     description: "Securely pay tuition and admission fees online.",
     icon: CreditCard,
-    textColor: "text-blue-600",
+    textColor: "text-blue-600 dark:text-blue-400",
     iconColor: "text-white",
     iconBg: "bg-blue-600",
-    bg: "bg-blue-50",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
     link: "#"
   },
   {
     title: "Attendance Portal",
     description: "Track student attendance and daily records.",
     icon: UserCheck,
-    textColor: "text-purple-600",
+    textColor: "text-purple-600 dark:text-purple-400",
     iconColor: "text-white",
     iconBg: "bg-purple-600",
-    bg: "bg-purple-50",
+    bg: "bg-purple-50 dark:bg-purple-900/20",
     link: "#"
   },
   {
     title: "Result Inquiry",
     description: "View board results and assessment reports.",
     icon: GraduationCap,
-    textColor: "text-green-600",
+    textColor: "text-green-600 dark:text-green-400",
     iconColor: "text-white",
     iconBg: "bg-green-600",
-    bg: "bg-green-50",
+    bg: "bg-green-50 dark:bg-green-900/20",
     link: "#"
   },
   {
     title: "Transport Tracking",
     description: "Live updates for school bus routes and timings.",
     icon: Bus,
-    textColor: "text-orange-500",
+    textColor: "text-orange-500 dark:text-orange-400",
     iconColor: "text-white",
     iconBg: "bg-orange-500",
-    bg: "bg-orange-50",
+    bg: "bg-orange-50 dark:bg-orange-900/20",
     link: "#"
   },
   {
     title: "Digital Library",
     description: "Access 20,000+ e-books and journals.",
     icon: Library,
-    textColor: "text-pink-600",
+    textColor: "text-pink-600 dark:text-pink-400",
     iconColor: "text-white",
     iconBg: "bg-pink-600",
-    bg: "bg-pink-50",
+    bg: "bg-pink-50 dark:bg-pink-900/20",
     link: "#"
   },
   {
     title: "Downloads",
     description: "Forms, syllabus, and academic brochures.",
     icon: Download,
-    textColor: "text-indigo-600",
+    textColor: "text-indigo-600 dark:text-indigo-400",
     iconColor: "text-white",
     iconBg: "bg-indigo-600",
-    bg: "bg-indigo-50",
+    bg: "bg-indigo-50 dark:bg-indigo-900/20",
     link: "#"
   }
 ];
 
 export function ParentResources() {
   return (
-    <section id="resources" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="resources" className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-700">
       {/* Background Blobs for Glass depth */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <Badge variant="outline" className="border-primary/20 text-primary px-6 py-1.5 rounded-full font-bold tracking-widest bg-white uppercase text-xs">
+        <div className="text-center mb-16 space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <Badge variant="outline" className="border-primary/20 dark:border-white/20 text-primary dark:text-white px-6 py-1.5 rounded-full font-bold tracking-widest bg-white dark:bg-white/5 uppercase text-xs">
             Digital Hub
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-primary dark:text-white tracking-tight">
             Parent & Student <span className="text-accent">Resources</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-muted-foreground dark:text-white/60 text-lg max-w-2xl mx-auto font-medium">
             Streamlined digital tools designed to support our community in their academic journey.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource, i) => (
-            <Card key={i} className="rounded-[3rem] border-white/60 bg-white/40 backdrop-blur-xl shadow-2xl hover:shadow-primary/10 transition-all duration-500 group border-2 hover:-translate-y-2">
+            <Card key={i} className="rounded-[3rem] border-white/60 dark:border-white/10 bg-white/40 dark:bg-white/5 backdrop-blur-xl shadow-2xl hover:shadow-primary/10 transition-all duration-500 group border-2 hover:-translate-y-2 hover:scale-[1.02]">
               <CardContent className="p-10 flex flex-col items-center text-center space-y-6">
-                <div className={`${resource.iconBg} w-20 h-20 rounded-3xl flex items-center justify-center ${resource.iconColor} shadow-lg group-hover:scale-110 transition-transform`}>
+                <div className={`${resource.iconBg} w-20 h-20 rounded-3xl flex items-center justify-center ${resource.iconColor} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
                   <resource.icon size={32} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-primary">{resource.title}</h3>
-                  <p className="text-muted-foreground font-medium leading-relaxed">
+                  <h3 className="text-2xl font-bold text-primary dark:text-white">{resource.title}</h3>
+                  <p className="text-muted-foreground dark:text-white/50 font-medium leading-relaxed">
                     {resource.description}
                   </p>
                 </div>
