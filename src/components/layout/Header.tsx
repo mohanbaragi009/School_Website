@@ -35,29 +35,29 @@ export function Header() {
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-[60]">
-      {/* Top Bar - Desktop Only - Made thicker with py-4 */}
+      {/* Top Bar - Desktop Only */}
       <div className="bg-primary text-white py-4 hidden lg:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
           <div className="flex gap-8">
-            <span className="flex items-center gap-2 opacity-90"><MapPin size={14} className="text-[hsl(var(--highlight))]" /> Seshadripuram, Bangalore</span>
-            <span className="flex items-center gap-2 opacity-90"><Phone size={14} className="text-[hsl(var(--highlight))]" /> +91 (80) 2356-1234</span>
-            <span className="flex items-center gap-2 opacity-90"><Mail size={14} className="text-[hsl(var(--highlight))]" /> info@seshadripuram.edu</span>
+            <span className="flex items-center gap-2 opacity-90"><MapPin size={14} className="text-highlight" /> Seshadripuram, Bangalore</span>
+            <span className="flex items-center gap-2 opacity-90"><Phone size={14} className="text-highlight" /> +91 (80) 2356-1234</span>
+            <span className="flex items-center gap-2 opacity-90"><Mail size={14} className="text-highlight" /> info@seshadripuram.edu</span>
           </div>
           <div className="flex gap-8">
-            <Link href="#contact" className="hover:text-[hsl(var(--highlight))] transition-colors">Alumni</Link>
-            <Link href="#contact" className="hover:text-[hsl(var(--highlight))] transition-colors">Careers</Link>
-            <Link href="#home" className="text-[hsl(var(--highlight))] animate-pulse">Admissions Open</Link>
+            <Link href="#contact" className="hover:text-highlight transition-colors">Alumni</Link>
+            <Link href="#contact" className="hover:text-highlight transition-colors">Careers</Link>
+            <Link href="#home" className="text-highlight animate-pulse">Admissions Open</Link>
           </div>
         </div>
       </div>
       
-      {/* Yellow separator line between blue and white */}
+      {/* Golden Separator */}
       <div className="h-1.5 bg-[hsl(var(--highlight))] w-full hidden lg:block"></div>
       
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-3 md:py-6 flex justify-between items-center">
-        <Link href="#home" className="flex items-center gap-3 md:gap-5 group">
-          <div className="relative w-12 h-12 md:w-20 md:h-20 overflow-hidden rounded-2xl border-2 border-primary/5 bg-white p-1 shadow-sm group-hover:shadow-md transition-shadow">
+      <div className="container mx-auto px-4 py-3 lg:py-4 xl:py-6 flex justify-between items-center overflow-hidden">
+        <Link href="#home" className="flex items-center gap-3 xl:gap-5 group shrink-0">
+          <div className="relative w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 overflow-hidden rounded-2xl border-2 border-primary/5 bg-white p-1 shadow-sm group-hover:shadow-md transition-shadow">
             <Image 
               src={logoUrl} 
               alt="SET Logo" 
@@ -66,30 +66,30 @@ export function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <h1 className="text-2xl md:text-4xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
-            <p className="text-[11px] md:text-sm font-bold text-accent tracking-[0.4em] uppercase mt-1">Institute</p>
+            <h1 className="text-xl lg:text-2xl xl:text-4xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
+            <p className="text-[9px] lg:text-[11px] xl:text-sm font-bold text-accent tracking-[0.4em] uppercase mt-1">Institute</p>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        {/* Desktop Navigation - Improved Spacing for Responsiveness */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-10">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href} 
-              className="text-xs font-bold uppercase tracking-widest text-primary/80 hover:text-accent transition-colors relative group"
+              className="text-[10px] xl:text-xs font-bold uppercase tracking-widest text-primary/80 hover:text-accent transition-colors relative group whitespace-nowrap"
             >
               {link.name}
               <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
           
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 rounded-full px-10 text-xs font-bold uppercase tracking-widest h-12 shadow-xl shadow-accent/20">
+          <Button asChild className="bg-accent hover:bg-accent/90 rounded-full px-6 xl:px-10 text-[10px] xl:text-xs font-bold uppercase tracking-widest h-10 xl:h-12 shadow-xl shadow-accent/20 shrink-0">
             <Link href="#staff">Staff Portal</Link>
           </Button>
         </nav>
 
-        {/* Mobile Navigation (Sheet) */}
+        {/* Mobile Navigation */}
         <div className="lg:hidden flex items-center gap-2">
           <Sheet>
             <SheetTrigger asChild>
@@ -110,7 +110,7 @@ export function Header() {
                         <p className="text-[10px] font-bold text-accent tracking-widest uppercase mt-1">Institute</p>
                       </div>
                     </SheetTitle>
-                    <SheetClose className="p-2 hover:bg-white/10 rounded-full">
+                    <SheetClose className="p-2 hover:bg-white/10 rounded-full text-white">
                       <X className="w-7 h-7" />
                     </SheetClose>
                   </div>

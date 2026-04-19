@@ -20,6 +20,7 @@ export default function Home() {
           <Hero />
         </div>
         
+        {/* About Section - Enhanced with Images */}
         <section id="about" className="py-24 bg-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform origin-top-right"></div>
           <div className="container mx-auto px-4 relative z-10">
