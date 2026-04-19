@@ -7,7 +7,9 @@ import { PrincipalMessage } from '@/components/home/PrincipalMessage';
 import { AcademicCalendar } from '@/components/home/AcademicCalendar';
 import { AcademicVideos } from '@/components/home/AcademicVideos';
 import { AiRefinementTool } from '@/components/admin/AiRefinementTool';
+import { VirtualGuide } from '@/components/home/VirtualGuide';
 import { Toaster } from '@/components/ui/toaster';
+import { getPlaceholderById } from '@/lib/placeholder-images';
 
 export default function Home() {
   return (
@@ -17,7 +19,6 @@ export default function Home() {
         <NewsBanner />
         <Hero />
         
-        {/* Main Content Area: Intro Text */}
         <section className="py-20 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -58,18 +59,18 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
                     <div className="bg-white p-2 rounded-2xl shadow-xl transform hover:-translate-y-2 transition-transform duration-500">
-                      <img src="https://picsum.photos/seed/sch1/400/500" alt="Students" className="rounded-xl w-full" />
+                      <img src={getPlaceholderById('welcome-1')} alt="Students" className="rounded-xl w-full" />
                     </div>
                     <div className="bg-white p-2 rounded-2xl shadow-xl transform translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-75">
-                      <img src="https://picsum.photos/seed/sch2/400/300" alt="Lab" className="rounded-xl w-full" />
+                      <img src={getPlaceholderById('welcome-2')} alt="Lab" className="rounded-xl w-full" />
                     </div>
                   </div>
                   <div className="space-y-4 pt-8">
                     <div className="bg-white p-2 rounded-2xl shadow-xl transform -translate-x-4 hover:-translate-y-2 transition-transform duration-500 delay-150">
-                      <img src="https://picsum.photos/seed/sch3/400/300" alt="Sports" className="rounded-xl w-full" />
+                      <img src={getPlaceholderById('welcome-3')} alt="Sports" className="rounded-xl w-full" />
                     </div>
                     <div className="bg-white p-2 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-500 delay-300">
-                      <img src="https://picsum.photos/seed/sch4/400/500" alt="Arts" className="rounded-xl w-full" />
+                      <img src={getPlaceholderById('welcome-4')} alt="Arts" className="rounded-xl w-full" />
                     </div>
                   </div>
                 </div>
@@ -79,6 +80,7 @@ export default function Home() {
         </section>
 
         <PrincipalMessage />
+        <VirtualGuide />
         <AcademicCalendar />
         <AcademicVideos />
         <AiRefinementTool />

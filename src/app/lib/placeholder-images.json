@@ -30,6 +30,30 @@
       "description": "School sports event",
       "imageUrl": "https://picsum.photos/seed/video3/600/400",
       "imageHint": "school sports"
+    },
+    {
+      "id": "welcome-1",
+      "description": "Students collaborating",
+      "imageUrl": "https://picsum.photos/seed/sch1/400/500",
+      "imageHint": "students collaborating"
+    },
+    {
+      "id": "welcome-2",
+      "description": "Modern classroom",
+      "imageUrl": "https://picsum.photos/seed/sch2/400/300",
+      "imageHint": "modern classroom"
+    },
+    {
+      "id": "welcome-3",
+      "description": "School auditorium",
+      "imageUrl": "https://picsum.photos/seed/sch3/400/300",
+      "imageHint": "school auditorium"
+    },
+    {
+      "id": "welcome-4",
+      "description": "Campus gardens",
+      "imageUrl": "https://picsum.photos/seed/sch4/400/500",
+      "imageHint": "campus gardens"
     }
   ]
 }
