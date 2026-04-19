@@ -2,6 +2,12 @@
 {
   "placeholderImages": [
     {
+      "id": "school-logo",
+      "description": "Seshadripuram Educational Trust official logo",
+      "imageUrl": "https://picsum.photos/seed/set-logo/200/200",
+      "imageHint": "school logo"
+    },
+    {
       "id": "school-hero",
       "description": "Modern school building exterior",
       "imageUrl": "https://picsum.photos/seed/school-hero/1200/600",

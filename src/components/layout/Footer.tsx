@@ -1,16 +1,28 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { getPlaceholderById } from '@/lib/placeholder-images';
 
 export function Footer() {
+  const logoUrl = getPlaceholderById('school-logo');
+
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Column 1: School Info */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary font-bold text-lg">SG</div>
+            <div className="relative w-12 h-12 bg-white rounded-full overflow-hidden p-1 shadow-inner">
+              <Image 
+                src={logoUrl} 
+                alt="SET Logo" 
+                fill 
+                className="object-contain"
+                data-ai-hint="school logo"
+              />
+            </div>
             <h2 className="text-xl font-headline font-bold">Seshadripuram Gateway</h2>
           </div>
           <p className="text-sm text-blue-100 leading-relaxed">

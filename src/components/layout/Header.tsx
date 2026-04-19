@@ -1,7 +1,9 @@
+
 "use client";
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, Search, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
@@ -17,8 +19,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { getPlaceholderById } from '@/lib/placeholder-images';
 
 export function Header() {
+  const logoUrl = getPlaceholderById('school-logo');
+
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
       {/* Top Bar - Desktop Only */}
@@ -39,8 +44,16 @@ export function Header() {
       
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl group-hover:bg-accent transition-colors">SG</div>
+        <Link href="/" className="flex items-center gap-2 md:gap-4 group">
+          <div className="relative w-10 h-10 md:w-14 md:h-14 overflow-hidden rounded-full border-2 border-primary/10 bg-white p-0.5">
+            <Image 
+              src={logoUrl} 
+              alt="SET Logo" 
+              fill 
+              className="object-contain"
+              data-ai-hint="school logo"
+            />
+          </div>
           <div>
             <h1 className="text-lg md:text-2xl font-headline font-bold text-primary tracking-tight leading-none">SESHADRIPURAM</h1>
             <p className="text-[10px] md:text-sm font-semibold text-accent tracking-[0.2em] md:tracking-widest uppercase">Gateway</p>
@@ -78,7 +91,15 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader className="border-b pb-4 mb-4">
                 <SheetTitle className="text-left flex items-center gap-2">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-xs">SG</div>
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border border-primary/10">
+                    <Image 
+                      src={logoUrl} 
+                      alt="SET Logo" 
+                      fill 
+                      className="object-contain"
+                      data-ai-hint="school logo"
+                    />
+                  </div>
                   <span className="font-headline font-bold text-primary">Seshadripuram Gateway</span>
                 </SheetTitle>
               </SheetHeader>
