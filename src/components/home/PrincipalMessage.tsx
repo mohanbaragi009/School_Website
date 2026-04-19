@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Quote } from 'lucide-react';
+import { Quote, Award, Clock } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function PrincipalMessage() {
@@ -66,24 +66,27 @@ export function PrincipalMessage() {
             </p>
             
             <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-10">
+              {/* Refined Credential Block instead of broken image */}
               <div className="flex flex-col">
-                <div className="relative w-48 h-20 grayscale opacity-80 brightness-75">
-                  <Image 
-                    src="https://placehold.co/240x80/transparent/264273?text=Meera+Rao&font=cursive" 
-                    alt="Signature"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="flex items-center gap-2 mb-2 text-accent">
+                  <Award size={18} />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Certified Academic Leader</span>
                 </div>
-                <p className="text-sm font-bold text-primary mt-4">Dr. Meera K. Rao</p>
+                <p className="text-2xl font-headline font-bold text-primary italic">Dr. Meera K. Rao</p>
+                <div className="h-0.5 w-24 bg-accent/30 my-2"></div>
                 <p className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest font-bold">Ph.D. in Educational Leadership</p>
               </div>
+
               <div className="h-20 w-px bg-border/60 hidden sm:block"></div>
+              
               <div className="space-y-2">
                 <p className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-black">Office Hours</p>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-                  <p className="text-lg font-bold text-primary">Mon - Fri: 9:00 AM - 11:00 AM</p>
+                  <p className="text-lg font-bold text-primary flex items-center gap-2">
+                    <Clock size={18} className="text-accent" />
+                    Mon - Fri: 9:00 AM - 11:00 AM
+                  </p>
                 </div>
               </div>
             </div>
