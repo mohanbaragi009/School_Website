@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen, Users, Trophy, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Trophy } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -18,9 +18,9 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-12">
-        {/* Premium Badge from Image */}
+        {/* Premium Badge from Image - Sparkle replaced by Dot */}
         <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-2xl border border-white/60 rounded-2xl shadow-xl mx-auto transform hover:scale-105 transition-all duration-500 group">
-          <Sparkles className="text-accent w-6 h-6 animate-pulse" />
+          <div className="w-3 h-3 rounded-full bg-accent shadow-[0_0_12px_rgba(137,77,224,0.6)] animate-pulse" />
           <span className="text-2xl font-black text-primary tracking-tight">90+</span>
           <span className="text-[10px] font-black text-muted-foreground/60 uppercase tracking-[0.3em] border-l border-primary/10 pl-4 hidden sm:block">Years of Excellence</span>
         </div>
