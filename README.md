@@ -22,10 +22,13 @@ A modern, responsive School Website built to showcase educational institution de
 
 📱 Responsive Design – Works smoothly on mobile, tablet, and desktop
 
-🛠️ Tech Stack
+🛠️ Tech Stack :
 Frontend: HTML, CSS, JavaScript
+
 Framework: (Optional: React / Next.js if used)
+
 Deployment: Vercel
+
 Version Control: Git & GitHub
 
 ➡️ Platforms like Vercel help developers deploy fast, scalable websites with minimal configuration and global performance optimization
