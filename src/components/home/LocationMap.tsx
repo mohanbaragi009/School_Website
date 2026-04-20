@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 export function LocationMap() {
   const address = "No. 27, Nagappa Street, Seshadripuram, Bangalore - 560020";
   const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.625!2d77.570!3d12.995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae163df6718427%3A0x6b0487494483a9!2sSeshadripuram%20Institute!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin`;
+  const externalMapUrl = `https://www.google.com/maps/search/?api=1&query=Seshadripuram+Institute+Nagappa+Street+Bangalore`;
 
   return (
     <section id="contact" className="py-24 bg-white overflow-hidden">
@@ -88,9 +89,14 @@ export function LocationMap() {
                   </div>
                 </div>
 
-                <button className="w-full bg-accent hover:bg-accent/90 text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all shadow-xl shadow-black/20 hover:scale-[1.02]">
+                <a 
+                  href={externalMapUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-accent hover:bg-accent/90 text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all shadow-xl shadow-black/20 hover:scale-[1.02] flex items-center justify-center text-center"
+                >
                   Open in Google Maps
-                </button>
+                </a>
               </CardContent>
             </Card>
           </div>
