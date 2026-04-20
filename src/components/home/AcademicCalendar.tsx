@@ -2,7 +2,7 @@
 "use client";
 
 import React from 'react';
-import { Clock, MapPin, ChevronRight, FileText } from 'lucide-react';
+import { Clock, MapPin, ChevronRight, FileText, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -14,7 +14,8 @@ const events = [
     location: "Main Auditorium",
     category: "Academic",
     color: "border-l-blue-500",
-    badge: "bg-blue-100 text-blue-700"
+    badge: "bg-blue-100 text-blue-700",
+    url: "https://www.coursera.org/search?query=artificial%20intelligence%20workshop"
   },
   {
     date: new Date(2024, 11, 20),
@@ -23,7 +24,8 @@ const events = [
     location: "School Ground",
     category: "Sports",
     color: "border-l-orange-500",
-    badge: "bg-orange-100 text-orange-700"
+    badge: "bg-orange-100 text-orange-700",
+    url: "https://www.olympics.com/en/sports/"
   },
   {
     date: new Date(2024, 11, 25),
@@ -32,7 +34,8 @@ const events = [
     location: "Campus",
     category: "Holiday",
     color: "border-l-purple-500",
-    badge: "bg-purple-100 text-purple-700"
+    badge: "bg-purple-100 text-purple-700",
+    url: "https://www.education.gov.in/calendar"
   }
 ];
 
@@ -83,9 +86,14 @@ export function AcademicCalendar() {
                       <MapPin size={16} className="text-accent shrink-0" /> {event.location}
                     </div>
                   </div>
-                  <button className="w-full py-3 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-2xl bg-primary/5 hover:bg-primary/10 shadow-sm">
-                    View Details <ChevronRight size={14} className="ml-1" />
-                  </button>
+                  <a 
+                    href={event.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 flex items-center justify-center text-xs font-bold text-primary hover:text-accent transition-colors uppercase tracking-widest border border-primary/10 rounded-2xl bg-primary/5 hover:bg-primary/10 shadow-sm"
+                  >
+                    View Details <ExternalLink size={14} className="ml-2" />
+                  </a>
                 </CardContent>
               </Card>
             ))}
