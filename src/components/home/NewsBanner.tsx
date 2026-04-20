@@ -13,9 +13,9 @@ export function NewsBanner() {
         </div>
         <div className="flex-1 overflow-hidden relative h-6">
           <div className="absolute inset-0 animate-marquee flex items-center whitespace-nowrap gap-16 text-sm font-bold tracking-wide uppercase italic">
-            <span>• Admissions for Academic Year 2024-25 are now open for all streams.</span>
-            <span>• Congratulations to our 2023 batch for achieving 100% results!</span>
-            <span>• Annual Sports Meet "Spardha 2024" scheduled for next Friday.</span>
+            <span>• Admissions for Academic Year 2025-26 are now open for all streams.</span>
+            <span>• Congratulations to our 2024 batch for achieving 100% results!</span>
+            <span>• Annual Sports Meet "Spardha 2025" scheduled for next Friday.</span>
             <span>• Workshop on AI in Education for teachers on 15th December.</span>
             <span>• New Digital Library wing inaugurated by Honorable Minister.</span>
           </div>

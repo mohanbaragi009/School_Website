@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const events = [
   {
-    date: new Date(2024, 11, 15),
+    date: new Date(2025, 11, 15),
     title: "AI & Future Skills Workshop",
     time: "10:00 AM - 1:00 PM",
     location: "Main Auditorium",
@@ -18,7 +18,7 @@ const events = [
     url: "https://www.coursera.org/search?query=artificial%20intelligence%20workshop"
   },
   {
-    date: new Date(2024, 11, 20),
+    date: new Date(2025, 11, 20),
     title: "Annual Sports Meet",
     time: "8:00 AM - 4:00 PM",
     location: "School Ground",
@@ -28,7 +28,7 @@ const events = [
     url: "https://www.olympics.com/en/sports/"
   },
   {
-    date: new Date(2024, 11, 25),
+    date: new Date(2025, 11, 25),
     title: "Winter Vacation Starts",
     time: "All Day",
     location: "Campus",
@@ -105,7 +105,7 @@ export function AcademicCalendar() {
                 <FileText className="text-primary h-10 w-10" />
               </div>
               <div>
-                <h4 className="font-bold text-primary text-2xl">Academic Planner 2024-25</h4>
+                <h4 className="font-bold text-primary text-2xl">Academic Planner 2025-26</h4>
                 <p className="text-muted-foreground text-base font-medium">Download the complete session schedule in PDF format.</p>
               </div>
             </div>
