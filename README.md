@@ -35,6 +35,7 @@ Version Control: Git & GitHub
 
 
 📂 Project Structure
+
 school-website/
 │── public/
 │── src/
@@ -43,3 +44,5 @@ school-website/
 │   ├── assets/
 │── package.json
 │── README.md
+
+
